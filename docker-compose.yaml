@@ -7,7 +7,7 @@
 services:
   web:
     #La imatge php:apache no conté els drivers de mysql, hem de fer una imatge a mida
-    image: spittet/php-mysql
+    #image: spittet/php-mysql
     build:
       context: ./images
       dockerfile: Dockerfile_php
