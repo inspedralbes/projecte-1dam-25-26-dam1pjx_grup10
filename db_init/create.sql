@@ -17,10 +17,17 @@ SET NAMES utf8mb4;
 -- Base de dades: `a25izagomdel_Incidencies`
 --
 
+
+DROP TABLE IF EXISTS ACTUACIO;
+DROP TABLE IF EXISTS DEPARTAMENT;
+DROP TABLE IF EXISTS INCIDENCIA;
+DROP TABLE IF EXISTS TECNIC;
+DROP TABLE IF EXISTS TIPOLOGIA;
+
 -- --------------------------------------------------------
 CREATE DATABASE IF NOT EXISTS incidencies
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
 -- Donem permisos a l'usuari 'usuari' per accedir a la base de dades 'persones'
 -- sinó, aquest usuari no podrà veure la base de dades i no podrà accedir a les taules
 GRANT ALL PRIVILEGES ON incidencies.* TO 'usuari'@'%';
@@ -99,7 +106,7 @@ CREATE TABLE `TIPOLOGIA` (
 --
 ALTER TABLE `ACTUACIO`
     ADD PRIMARY KEY (`idACTUACIO`),
-  ADD KEY `fk_incidencia` (`incidencia`);
+ADD KEY `fk_incidencia` (`incidencia`);
 
 --
 -- Índexs per a la taula `DEPARTAMENT`
@@ -112,9 +119,9 @@ ALTER TABLE `DEPARTAMENT`
 --
 ALTER TABLE `INCIDENCIA`
     ADD PRIMARY KEY (`idIncidencia`),
-  ADD KEY `fk_departament` (`departament`),
-  ADD KEY `fk_tipologia` (`tipologia`),
-  ADD KEY `fk_tecnic` (`tecnic`);
+ADD KEY `fk_departament` (`departament`),
+ADD KEY `fk_tipologia` (`tipologia`),
+ADD KEY `fk_tecnic` (`tecnic`);
 
 --
 -- Índexs per a la taula `TECNIC`
@@ -177,13 +184,23 @@ ALTER TABLE `ACTUACIO`
 --
 ALTER TABLE `INCIDENCIA`
     ADD CONSTRAINT `fk_departament` FOREIGN KEY (`departament`) REFERENCES `DEPARTAMENT` (`idDepartament`),
-  ADD CONSTRAINT `fk_tecnic` FOREIGN KEY (`tecnic`) REFERENCES `TECNIC` (`idTecnic`),
-  ADD CONSTRAINT `fk_tipologia` FOREIGN KEY (`tipologia`) REFERENCES `TIPOLOGIA` (`idTipus`);
+ADD CONSTRAINT `fk_tecnic` FOREIGN KEY (`tecnic`) REFERENCES `TECNIC` (`idTecnic`),
+ADD CONSTRAINT `fk_tipologia` FOREIGN KEY (`tipologia`) REFERENCES `TIPOLOGIA` (`idTipus`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+INSERT into TECNIC (nom, cognom)
+values ('Jo', 'M');
 
-/*Faltant els inserts de Tecnics*/;
+INSERT into TECNIC (nom, cognom)
+values ('I', 'G');
+
+INSERT into TECNIC (nom, cognom)
+values ('Pepita', 'Menganita');
+
+INSERT into TECNIC (nom, cognom)
+values ('Tècnic', 'Tecnicador');
+
