@@ -6,11 +6,7 @@
 -- Temps de generació: 22-04-2026 a les 10:14:08
 -- Versió del servidor: 11.4.8-MariaDB-ubu2404
 -- Versió de PHP: 8.3.25
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+SET NAMES utf8mb4;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -22,7 +18,15 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+CREATE DATABASE IF NOT EXISTS incidencies
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+-- Donem permisos a l'usuari 'usuari' per accedir a la base de dades 'persones'
+-- sinó, aquest usuari no podrà veure la base de dades i no podrà accedir a les taules
+GRANT ALL PRIVILEGES ON incidencies.* TO 'usuari'@'%';
+FLUSH PRIVILEGES;
+-- Després de crear la base de dades, cal seleccionar-la per treballar-hi
+USE incidencies;
 --
 -- Estructura de la taula `ACTUACIO`
 --
@@ -33,7 +37,7 @@ CREATE TABLE `ACTUACIO` (
                             `temps` int(11) DEFAULT NULL,
                             `visible` int(11) DEFAULT 0 CHECK (`visible` = 0 or `visible` = 1),
                             `incidencia` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -44,7 +48,7 @@ CREATE TABLE `ACTUACIO` (
 CREATE TABLE `DEPARTAMENT` (
                                `idDepartament` int(11) NOT NULL,
                                `nom` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -61,7 +65,7 @@ CREATE TABLE `INCIDENCIA` (
                               `departament` int(11) DEFAULT NULL,
                               `tecnic` int(11) DEFAULT NULL,
                               `tipologia` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -73,7 +77,7 @@ CREATE TABLE `TECNIC` (
                           `idTecnic` int(11) NOT NULL,
                           `nom` varchar(255) DEFAULT NULL,
                           `cognom` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,7 @@ CREATE TABLE `TECNIC` (
 CREATE TABLE `TIPOLOGIA` (
                              `idTipus` int(11) NOT NULL,
                              `nom` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Índexs per a les taules bolcades
@@ -180,3 +184,6 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+/*Faltant els inserts de Tecnics*/;
