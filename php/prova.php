@@ -1,1 +1,0 @@
-això és una prova

@@ -204,3 +204,18 @@ values ('Pepita', 'Menganita');
 INSERT into TECNIC (nom, cognom)
 values ('Tècnic', 'Tecnicador');
 
+
+INSERT into DEPARTAMENT (nom)
+values ('Informàtica'),
+       ('Català'),
+       ('Castellà'),
+       ('Matemàtiques');
+
+INSERT into TIPOLOGIA (nom)
+values ('Hardware'),
+       ('Software'),
+       ('Xarxa'),
+       ('Seguretat'),
+       ('Base de dades');
+
+
