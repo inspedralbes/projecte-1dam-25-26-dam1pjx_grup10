@@ -24,7 +24,7 @@
 <div class="row">
     <div class="col-12">
         <h1>Trobar Incidencia</h1>
-        <form action="llistar_inci.php" method="POST">
+        <form action="llistar_inci_dptm.php" method="POST">
             <div class="form-group">
                 <label for="departament">Departament</label>
                 <select name="departament" id="departament">
@@ -32,12 +32,17 @@
                     <option value="1">Informàtica</option>
                     <option value="2">Català</option>
                     <option value="3">Castellá</option>
-                    <option value="4">Matemàtiques</Matemàti></option>
+                    <option value="4">Matemàtiques</option>
                 </select>
             </div>
+        <div class="form-group"><button class="btn btn-success">Trobar</button></div>
+
+        </form>
 
             <p>O</p>
 
+
+        <form action="llistar_inci_id.php" method="POST">
             <div class="form-group">
                 <label for="idIncidencia">Numero Incidencia</label>
                 <textarea name="idIncidencia" placeholder="Indica el numero de Incidencia"></textarea>
