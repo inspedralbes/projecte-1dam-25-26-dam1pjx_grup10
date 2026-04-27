@@ -3,7 +3,20 @@
     <?php include_once "header.php"?>
 
 </header>
-<p>Prova</p>
+
+<h2> Benvigut a la pàgina principal de gestió d'incidències </h2>
+
+<h4> Qui ets? </h4>
+
+<ul>
+
+    <!-- TODO: afegir les pàgines de tècnic i responsable-->
+    <li> <a href="./crear_inci.php"> Usuari </a>  </li>
+    <li> <a href=""> Tècnic </a>  </li>
+    <li> <a href=""> Responsable </a>  </li>
+
+</ul>
+
 <footer>
     <?php include_once "footer.php"?>
 
