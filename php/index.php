@@ -11,7 +11,7 @@
 <ul>
 
     <!-- TODO: afegir les pàgines de tècnic i responsable-->
-    <li> <a href="./crear_inci.php"> Usuari </a>  </li>
+    <li> <a href="./usuaris.php"> Usuari </a>  </li>
     <li> <a href=""> Tècnic </a>  </li>
     <li> <a href=""> Responsable </a>  </li>
 
