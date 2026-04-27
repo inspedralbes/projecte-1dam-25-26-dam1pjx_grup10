@@ -5,7 +5,7 @@
         <form action="registrar_act.php" method="POST">
             <div class="form-group">
                 <label for="temps_trigat">Temps Trigat</label>
-                <select name="departament" id="departament" required>
+                <select name="temps_trigat" id="temps_trigat" required>
                     <option value="" selected disabled>-- Selecciona Temps Trigat --</option>
                     <option value="5">5min</option>
                     <option value="10">10min</option>
@@ -27,7 +27,7 @@
                     </td>
                     <td>
                         <label for="visible">Visible per l'usuari</label>
-                        <input type="checkbox" name="finalizat" id="yes" value="1">
+                        <input type="checkbox" name="visible" id="yes" value="1">
                     </td>
                 </table>
             </div>
