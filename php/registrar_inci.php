@@ -1,6 +1,6 @@
 <?php
-$mysqli = include_once "connexio.php";
-$departament = $_POST["departament"];
+$mysqli = require_once 'connexio.php';;
+$departament = intval($_POST["departament"]);
 $descripcio = $_POST["descripcio"];
 $sentencia = $mysqli->prepare("INSERT INTO INCIDENCIA
 (departament, descripcio)

@@ -1,11 +1,16 @@
 <?php include_once "header.php"; ?>
 <div class="row">
     <div class="col-12">
-        <h1>Registrar videojuego</h1>
-        <form action="registrar.php" method="POST">
+        <h1>Registarr Incidencia</h1>
+        <form action="registrar_inci.php" method="POST">
             <div class="form-group">
                 <label for="departament">Departament</label>
-                <input placeholder="Departament" class="form-control" type="text" name="departament" id="departament" required>
+                <select name="departament" id="departament" required>
+                    <option value="1">Informàtica</option>
+                    <option value="2">Català</option>
+                    <option value="3">Castellá</option>
+                    <option value="4">Matemàtiques</Matemàti></option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="descripcio">Descripción</label>
