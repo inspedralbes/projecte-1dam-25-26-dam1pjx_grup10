@@ -7,7 +7,7 @@
 
 
 // Configuració de la connexió a la base de dades
-$servername = "localhost"; // Nom del servei definit al docker-compose.yaml
+$servername = "db"; // Nom del servei definit al docker-compose.yaml
 $username = "usuari"; // Usuari definit al docker-compose.yaml
 $password = "paraula_de_pas"; // Contrasenya definida al docker-compose.yaml
 $dbname = "incidencies"; // Nom de la base de dades
@@ -28,7 +28,8 @@ if ($conn->connect_error) {
     echo "<p>Error de connexió: " . htmlspecialchars($conn->connect_error) . "</p>";
     die("Error de connexió: " . $conn->connect_error);
 }
-
+return $conn;
+?>
 // A partir d'aquí, ja podeu fer les consultes a la base de dades a partir de la variable $conn
 
 // L'estàndar de codificació de PHP PSR-12 indica que els fitxers que només contenen codi PHP
