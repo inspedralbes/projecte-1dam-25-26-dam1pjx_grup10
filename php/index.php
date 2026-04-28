@@ -12,7 +12,7 @@
 
     <!-- TODO: afegir les pàgines de tècnic i responsable-->
     <li> <a href="./usuaris.php"> Usuari </a>  </li>
-    <li> <a href=""> Tècnic </a>  </li>
+    <li> <a href="tecnics.php"> Tècnic </a>  </li>
     <li> <a href="./responsables.php"> Responsable </a>  </li>
 
 </ul>
