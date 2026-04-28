@@ -24,7 +24,7 @@
 <div class="row">
     <div class="col-12">
         <h1>Trobar Incidencia</h1>
-        <form action="llistar_inci_dptm.php" method="POST">
+        <form action="llistar_inci_dept.php" method="POST">
             <div class="form-group">
                 <label for="departament">Departament</label>
                 <select name="departament" id="departament">

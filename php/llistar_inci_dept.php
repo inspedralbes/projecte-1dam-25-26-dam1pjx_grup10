@@ -1,10 +1,10 @@
 <?php include_once "header.php"; ?>
 <?php
 $mysqli = require_once 'connexio.php';
-$id = intval($_POST["idIncidencia"]);
+$departament = intval($_POST["departament"]);
 
-$sentencia = $mysqli->prepare("SELECT * FROM ACTUACIO WHERE incidencia = ?");
-$sentencia->bind_param("i", $id);
+$sentencia = $mysqli->prepare("SELECT * FROM INCIDENCIA WHERE departament = ?");
+$sentencia->bind_param("i", $departament);
 $sentencia->execute();
 
 $resultat = $sentencia->get_result();
@@ -18,18 +18,18 @@ while ($fila = $resultat->fetch_assoc()) {
 <table class="table">
     <thead>
         <tr>
-            <th>Actuació</th>
+            <th>ID Incidència</th>
             <th>Descripció</th>
-            <th>Temps trigat</th>
+            <th>Data inici</th>
         </tr>
     </thead>
     <tbody>
         <?php $comptador = 1; ?>
         <?php foreach ($dades as $fila): ?>
         <tr>
-            <td>Actuació <?= $comptador ?></td>
-            <td><?= $fila["visible"]==1 ? $fila["descripcio"] : "No hi ha informació disponible"?></td>
-            <td><?= $fila["temps"] ?></td>
+            <td><?= $fila["idIncidencia"] ?></td>
+            <td><?= $fila["descripcio"] ?></td>
+            <td><?= $fila["data_inici"] ?></td>
         </tr>
         <?php $comptador++; ?>
         <?php endforeach; ?>
