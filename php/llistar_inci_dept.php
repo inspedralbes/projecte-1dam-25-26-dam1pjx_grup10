@@ -18,18 +18,18 @@ while ($fila = $resultat->fetch_assoc()) {
 <table class="table">
     <thead>
         <tr>
-            <th>Actuació</th>
+            <th>ID Incidència</th>
             <th>Descripció</th>
-            <th>Temps trigat</th>
+            <th>Data inici</th>
         </tr>
     </thead>
     <tbody>
         <?php $comptador = 1; ?>
         <?php foreach ($dades as $fila): ?>
         <tr>
-            <td>Actuació <?= $comptador ?></td>
+            <td><?= $fila["idIncidencia"] ?></td>
             <td><?= $fila["descripcio"] ?></td>
-            <td><?= $fila["temps"] ?></td>
+            <td><?= $fila["data_inici"] ?></td>
         </tr>
         <?php $comptador++; ?>
         <?php endforeach; ?>
