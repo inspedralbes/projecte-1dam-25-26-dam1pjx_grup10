@@ -1,7 +1,7 @@
 <?php include_once "header.php"; ?>
 <?php
 $mysqli = require_once 'connexio.php';
-$departament = intval($_POST["departament"]);
+$departament = intval($_GET["departament"]);
 
 $sentencia = $mysqli->prepare("SELECT * FROM INCIDENCIA WHERE departament = ?");
 $sentencia->bind_param("i", $departament);
