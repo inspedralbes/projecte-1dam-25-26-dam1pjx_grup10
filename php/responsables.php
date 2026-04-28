@@ -18,3 +18,5 @@
             </div>
     </div>
 </div>
+<br>
+<?php include_once("footer.php"); ?>
