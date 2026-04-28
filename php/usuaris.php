@@ -24,7 +24,7 @@
 <div class="row">
     <div class="col-12">
         <h1>Trobar Incidencia</h1>
-        <form action="llistar_inci_dept.php" method="POST">
+        <form action="llistar_inci_dept.php" method="GET">
             <div class="form-group">
                 <label for="departament">Departament</label>
                 <select name="departament" id="departament">
@@ -42,7 +42,7 @@
             <p>O</p>
 
 
-        <form action="llistar_inci_id.php" method="POST">
+        <form action="llistar_inci_id.php" method="GET">
             <div class="form-group">
                 <label for="idIncidencia">Numero Incidencia</label>
                 <textarea name="idIncidencia" placeholder="Indica el numero de Incidencia"></textarea>

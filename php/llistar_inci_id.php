@@ -1,7 +1,7 @@
 <?php include_once "header.php"; ?>
 <?php
 $mysqli = require_once 'connexio.php';
-$id = intval($_POST["idIncidencia"]);
+$id = intval($_GET["idIncidencia"]);
 
 $sentencia = $mysqli->prepare("SELECT * FROM ACTUACIO WHERE incidencia = ?");
 $sentencia->bind_param("i", $id);
