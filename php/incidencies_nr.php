@@ -9,7 +9,8 @@ left join TIPOLOGIA on INCIDENCIA.tipologia = TIPOLOGIA.idTipus
 left join TECNIC on INCIDENCIA.tecnic = TECNIC.idTecnic
 left join ACTUACIO on INCIDENCIA.idIncidencia = ACTUACIO.incidencia
 WHERE data_fi is NULL
-group by INCIDENCIA.idIncidencia");
+group by INCIDENCIA.idIncidencia
+order by INCIDENCIA.prioritat, INCIDENCIA.idIncidencia");
 
 $sentencia->execute();
 
