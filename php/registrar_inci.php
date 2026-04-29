@@ -8,7 +8,12 @@ VALUES
 (?, ?)");
 $sentencia->bind_param("is", $departament, $descripcio);
 $sentencia->execute();
-//header("Location: llistar_inci_id.php");
-//TODO: Missatge que mostri exit del registre
+
+$ultimID = $mysqli->insert_id;
+?>
 
 
+<h1>Incidència registrada correctament.</h1>
+<p>L'ID de la teva incidència és <?php echo $ultimID ?> </p>
+
+<?php include_once "footer.php"; ?>
