@@ -21,6 +21,7 @@ while ($fila = $resultat->fetch_assoc()) {
             <th>ID Incidència</th>
             <th>Descripció</th>
             <th>Data inici</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +31,7 @@ while ($fila = $resultat->fetch_assoc()) {
             <td><?= $fila["idIncidencia"] ?></td>
             <td><?= $fila["descripcio"] ?></td>
             <td><?= $fila["data_inici"] ?></td>
+            <td> <a href="llistar_inci_id.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>"> Veure</a></td>
         </tr>
         <?php $comptador++; ?>
         <?php endforeach; ?>
