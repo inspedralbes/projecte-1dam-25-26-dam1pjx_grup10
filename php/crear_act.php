@@ -1,4 +1,5 @@
 <?php include_once "header.php"; ?>
+<?php $idIncidencia = intval($_GET['idIncidencia']); ?>
 <div class="row">
     <div class="col-12">
         <h1>Registar Actuació</h1>
@@ -27,7 +28,7 @@
                     </td>
                     <td>
                         <label for="visible">Visible per l'usuari</label>
-                        <input type="checkbox" name="visible" id="yes" value="1">
+                        <input type="checkbox" name="visible" id="visible" value="1">
                     </td>
                 </table>
             </div>
@@ -36,8 +37,11 @@
                 <label for="finalizat">Finalitzat?</label>
                 <input type="checkbox" name="finalizat" id="yes" value="1">
             </div>
-            <div class="form-group"><button class="btn btn-success">Guardar</button></div>
-        </form>
+                <input name="idIncidencia" value="<?= $idIncidencia ?>">
+
+                <div class="form-group"><button class="btn btn-success">Guardar</button></div>
+            </div>
+       </form>
     </div>
 </div>
 <?php include_once "footer.php"; ?>
