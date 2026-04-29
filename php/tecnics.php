@@ -6,7 +6,7 @@
             <div class="form-group">
                 <h3>Digues el teu id de Tecnic</h3>
                 <label for="idTecnic"></label>
-                <textarea class="form-control" name="idTecnic" rows="3" cols="50" placeholder="Posa el numero"></textarea>
+                <textarea class="form-control" name="idTecnic" id ="idTecnic" rows="3" cols="50" placeholder="Posa el numero"></textarea>
                 <div class="form-group"><button class="btn btn-success">Trobar</button></div>
             </div>
         </form>

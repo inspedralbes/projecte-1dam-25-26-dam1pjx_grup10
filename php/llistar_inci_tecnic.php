@@ -5,8 +5,9 @@ $idTecnic = $_GET['idTecnic'];
 $sentencia = $mysqli->prepare("SELECT INCIDENCIA.idIncidencia, INCIDENCIA.prioritat
 FROM INCIDENCIA 
 join TECNIC on INCIDENCIA.tecnic = TECNIC.idTecnic
-WHERE tecnic =?")
-%$sentencia->bind_param("i", $idTecnic);
+WHERE tecnic =?");
+
+$sentencia->bind_param("i", $idTecnic);
 
 $sentencia->execute();
 
