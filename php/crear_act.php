@@ -37,7 +37,7 @@
                 <label for="finalizat">Finalitzat?</label>
                 <input type="checkbox" name="finalizat" id="yes" value="1">
             </div>
-                <input name="idIncidencia" value="<?= $idIncidencia ?>">
+                <input type="hidden" name="idIncidencia" value="<?= $idIncidencia ?>">
 
                 <div class="form-group"><button class="btn btn-success">Guardar</button></div>
             </div>
