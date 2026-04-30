@@ -5,7 +5,8 @@ $mysqli = require_once 'connexio.php';
 $sentencia = $mysqli->prepare("SELECT INCIDENCIA.idIncidencia,INCIDENCIA.data_inici, DEPARTAMENT.nom AS 'nom_dpt'
  FROM INCIDENCIA
   JOIN DEPARTAMENT ON INCIDENCIA.departament = DEPARTAMENT.idDepartament
-  WHERE tecnic is NULL");
+  WHERE tecnic is NULL
+  ORDER BY INCIDENCIA.idIncidencia, DEPARTAMENT.idDepartament");
 $sentencia->execute();
 
 $resultat = $sentencia->get_result();

@@ -1,3 +1,4 @@
+<?php include_once("header.php"); ?>
 <?php
 $mysqli = require_once 'connexio.php';
 $departament = intval($_POST["departament"]);
