@@ -1,13 +1,13 @@
 <?php include_once("header.php"); ?>
 <div class="row">
     <div class="col-12">
-        <h1>Gestió  d'Incidènciies</h1>
+        <h1>Hola, Responsable: Gestió  d'Incidències</h1>
             <div class="form-group">
-                <h3>Numero d'incidències no resoltes</h3>
+                <h3>Incidències no resoltes</h3>
                 <button onclick="location.href='./incidencies_nr.php'">Veure</button>
             </div>
             <div class="form-group">
-                <h3>Numero d'incidències pendents d'assignar</h3>
+                <h3>Incidències pendents d'assignar</h3>
                 <button onclick="location.href='./incidencies_pa.php'">Veure</button>
             </div>
         <br>
