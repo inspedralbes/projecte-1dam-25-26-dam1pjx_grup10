@@ -16,14 +16,18 @@ while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
 ?>
-
+    <h4>Data Fi</h4>
+    <?php if (empty($dades) || is_null($dades[0]["data_fi"])): ?>
+        <p>Pendent</p>
+    <?php else: ?>
+        <p><?= $dades[0]["data_fi"] ?></p>
+    <?php endif; ?>
 <table class="table">
     <thead>
         <tr>
             <th>Actuació</th>
             <th>Descripció</th>
             <th>Temps trigat</th>
-            <th>Data Fi</th>
         </tr>
     </thead>
     <tbody>
@@ -33,7 +37,6 @@ while ($fila = $resultat->fetch_assoc()) {
             <td>Actuació <?= $comptador ?></td>
             <td><?= $fila["visible"]==1 ? $fila["descripcio"] : "No hi ha informació disponible"?></td>
             <td><?= $fila["temps"] ?></td>
-            <td><?= $fila["data_fi"] ?? "Pendent" ?></td>
         </tr>
         <?php $comptador++; ?>
         <?php endforeach; ?>
