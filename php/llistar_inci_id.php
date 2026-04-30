@@ -3,7 +3,7 @@
 $mysqli = require_once 'connexio.php';
 $id = intval($_GET["idIncidencia"]);
 
-$sentencia = $mysqli->prepare("SELECT * FROM ACTUACIO act
+$sentencia = $mysqli->prepare("SELECT *, act.descripcio as 'act_desc' FROM ACTUACIO act
     join INCIDENCIA inci on act.incidencia = inci.idIncidencia
     WHERE incidencia = ?");
 $sentencia->bind_param("i", $id);
@@ -35,7 +35,7 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php foreach ($dades as $fila): ?>
         <tr>
             <td>Actuació <?= $comptador ?></td>
-            <td><?= $fila["visible"]==1 ? $fila["descripcio"] : "No hi ha informació disponible"?></td>
+            <td><?= $fila["visible"]==1 ? $fila["act_desc"] : "No hi ha informació disponible"?></td>
             <td><?= $fila["temps"] ?></td>
         </tr>
         <?php $comptador++; ?>
