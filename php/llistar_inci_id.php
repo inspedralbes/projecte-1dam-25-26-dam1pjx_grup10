@@ -3,7 +3,9 @@
 $mysqli = require_once 'connexio.php';
 $id = intval($_GET["idIncidencia"]);
 
-$sentencia = $mysqli->prepare("SELECT * FROM ACTUACIO WHERE incidencia = ?");
+$sentencia = $mysqli->prepare("SELECT * FROM ACTUACIO act
+    join INCIDENCIA inci on act.incidencia = inci.idIncidencia
+    WHERE incidencia = ?");
 $sentencia->bind_param("i", $id);
 $sentencia->execute();
 
@@ -21,6 +23,7 @@ while ($fila = $resultat->fetch_assoc()) {
             <th>Actuació</th>
             <th>Descripció</th>
             <th>Temps trigat</th>
+            <th>Data Fi</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +33,7 @@ while ($fila = $resultat->fetch_assoc()) {
             <td>Actuació <?= $comptador ?></td>
             <td><?= $fila["visible"]==1 ? $fila["descripcio"] : "No hi ha informació disponible"?></td>
             <td><?= $fila["temps"] ?></td>
+            <td><?= $fila["data_fi"] ?? "Pendent" ?></td>
         </tr>
         <?php $comptador++; ?>
         <?php endforeach; ?>
