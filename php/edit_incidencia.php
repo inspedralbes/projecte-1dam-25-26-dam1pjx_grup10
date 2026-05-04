@@ -84,5 +84,5 @@ while ($fila = $resultat->fetch_assoc()) {
 
 
 
-
+<?php $link = 'incidencies_pa.php'; ?>
 <?php include_once "footer.php"; ?>

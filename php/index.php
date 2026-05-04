@@ -19,5 +19,4 @@
 
 <footer>
     <?php include_once "footer.php"?>
-
 </footer>

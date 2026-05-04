@@ -46,5 +46,5 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php endforeach; ?>
     </tbody>
 </table>
-
+<?php $link = 'responsables.php'; ?>
 <?php include_once "footer.php"; ?>

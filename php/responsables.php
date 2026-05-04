@@ -19,4 +19,6 @@
     </div>
 </div>
 <br>
+
+<?php $link = 'index.php'; ?>
 <?php include_once("footer.php"); ?>
