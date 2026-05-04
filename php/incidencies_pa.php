@@ -17,6 +17,8 @@ while ($fila = $resultat->fetch_assoc()) {
 }
 ?>
 
+<h2>Incidencies Pendents d'Assignar</h2>
+
 <table class="table">
     <thead>
         <tr>
