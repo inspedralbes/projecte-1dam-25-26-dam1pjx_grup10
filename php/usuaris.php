@@ -1,4 +1,9 @@
 <?php include_once "header.php"; ?>
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
 <div class="row">
     <div class="col-12">
         <h1>Registar Incidència</h1>
@@ -15,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="descripcio">Descripció</label>
-                <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" cols="30" rows="10" required></textarea>
+                <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" rows="4" required ></textarea>
             </div>
             <div class="form-group"><button class="btn btn-success">Registrar</button></div>
         </form>
@@ -30,7 +35,7 @@
         <form action="llistar_inci_id.php" method="GET">
             <div class="form-group">
                 <label for="idIncidencia">Número Incidència</label> <br>
-                <textarea name="idIncidencia" placeholder="Indica el número de la teva Incidència"></textarea>
+                <textarea name="idIncidencia" placeholder="Indica el número de la teva Incidència" rows="1" cols="30"></textarea>
             </div>
             <div class="form-group"><button class="btn btn-success">Trobar</button></div>
         </form>
