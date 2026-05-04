@@ -17,4 +17,6 @@ $ultimID = $mysqli->insert_id;
 <h1>Incidència registrada correctament.</h1>
 <p>L'ID de la teva incidència és <?php echo $ultimID ?> </p>
 
+
+<?php $link = 'usuaris.php'; ?>
 <?php include_once "footer.php"; ?>

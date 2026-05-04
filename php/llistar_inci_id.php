@@ -43,4 +43,5 @@ while ($fila = $resultat->fetch_assoc()) {
     </tbody>
 </table>
 
+<?php $link = 'usuaris.php'; ?>
 <?php include_once "footer.php"; ?>
