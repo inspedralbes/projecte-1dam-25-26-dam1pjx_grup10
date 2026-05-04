@@ -38,7 +38,9 @@ while ($fila = $resultat->fetch_assoc()) {
     </thead>
     <tbody>
     <?php foreach ($dades as $fila): ?>
-        <tr>
+        <tr <?php if ($fila['prioritat'] == 'Alta'){ echo 'class="table-danger"';} elseif ($fila['prioritat'] == 'Mitja'){echo 'class="table-warning"';}
+        elseif ($fila['prioritat'] == 'Baixa'){echo 'class="table-info"';}?>>
+
             <td><?= $fila["idIncidencia"] ?></td>
             <td><?= $fila["descripcio"] ?></td>
             <td><?= $fila["dep_nom"] ?></td>
@@ -47,6 +49,7 @@ while ($fila = $resultat->fetch_assoc()) {
             <td><?= $fila["tecnic_nom"] ?></td>
             <td><?= $fila["Num. Actuacions"] ?></td>
         </tr>
+
     <?php endforeach; ?>
     </tbody>
 </table>
