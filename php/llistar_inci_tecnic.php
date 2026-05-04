@@ -1,4 +1,15 @@
 <?php include_once "header.php"; ?>
+    <style>
+        .table {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .table th:nth-child(1), .table td:nth-child(1) { width: 15%; }
+        .table th:nth-child(2), .table td:nth-child(2) { width: 40%; }
+        .table th:nth-child(3), .table td:nth-child(3) { width: 30%; }
+        .table th:nth-child(4), .table td:nth-child(4) { width: 15%; }
+    </style>
 <?php
 $mysqli = require_once 'connexio.php';
 $idTecnic = $_GET['idTecnic'];
@@ -23,7 +34,7 @@ while ($fila = $resultat->fetch_assoc()) {
         <tbody>
         <h3>Prioritat Alta</h3>
 
-        <table class="table">
+        <table class="table"    >
             <thead>
                     <tr>
                         <th>ID Incidència</th>
@@ -34,7 +45,7 @@ while ($fila = $resultat->fetch_assoc()) {
                     </thead>
         <?php foreach ($dades as $fila): ?>
         <?php if ($fila['prioritat'] == 'Alta'): ?>
-            <tr>
+            <tr class="table-danger">
                 <td><?= $fila["idIncidencia"] ?></td>
                 <td> <?= $fila["descripcio"] ?> </td>
                 <td><?= $fila["nom"] ?> </td>
@@ -56,7 +67,7 @@ while ($fila = $resultat->fetch_assoc()) {
                     </thead>
         <?php foreach ($dades as $fila): ?>
         <?php if ($fila['prioritat'] == 'Mitja'): ?>
-            <tr>
+            <tr class="table-warning">
                 <td><?= $fila["idIncidencia"] ?></td>
                 <td> <?= $fila["descripcio"] ?> </td>
                 <td><?= $fila["nom"] ?> </td>
@@ -69,7 +80,7 @@ while ($fila = $resultat->fetch_assoc()) {
 
         <table class="table">
             <thead>
-                    <tr>
+                    <tr class="table">
                         <th>ID Incidència</th>
                         <th>Descripció </th>
                         <th>Departament </th>
@@ -78,7 +89,7 @@ while ($fila = $resultat->fetch_assoc()) {
                     </thead>
         <?php foreach ($dades as $fila): ?>
         <?php if ($fila['prioritat'] == 'Baixa'): ?>
-            <tr>
+            <tr class="table-info">
                 <td><?= $fila["idIncidencia"] ?></td>
                 <td> <?= $fila["descripcio"] ?> </td>
                 <td><?= $fila["nom"] ?> </td>
