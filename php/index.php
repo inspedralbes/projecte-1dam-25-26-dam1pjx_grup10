@@ -1,8 +1,6 @@
 
-<header>
     <?php include_once "header.php"?>
 
-</header>
 
 <h2> Benvigut a la pàgina principal de gestió d'incidències </h2>
 
@@ -17,7 +15,6 @@
 
 </ul>
 
-<footer>
-    <?php include_once "footer.php"?>
+<?php $link = 'index.php'; ?>
 
-</footer>
+    <?php include_once "footer.php"?>

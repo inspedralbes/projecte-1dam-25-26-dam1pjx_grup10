@@ -44,4 +44,6 @@
        </form>
     </div>
 </div>
+
+<?php $link = 'llistar_inci_tecnic.php?idTecnic='.$_GET["idTecnic"]; ?>
 <?php include_once "footer.php"; ?>

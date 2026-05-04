@@ -49,7 +49,7 @@ while ($fila = $resultat->fetch_assoc()) {
                 <td><?= $fila["idIncidencia"] ?></td>
                 <td> <?= $fila["descripcio"] ?> </td>
                 <td><?= $fila["nom"] ?> </td>
-                <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>">Crear Actuacio</a></td>
+                <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>&idTecnic=<?php echo $idTecnic?>">Crear Actuacio</a></td>
             </tr>
         <?php endif; ?>
         <?php endforeach; ?>
@@ -71,7 +71,7 @@ while ($fila = $resultat->fetch_assoc()) {
                 <td><?= $fila["idIncidencia"] ?></td>
                 <td> <?= $fila["descripcio"] ?> </td>
                 <td><?= $fila["nom"] ?> </td>
-                <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>">Crear Actuacio</a></td>
+                <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>&idTecnic=<?php echo $idTecnic?>">Crear Actuacio</a></td>
             </tr>
         <?php endif; ?>
         <?php endforeach; ?>
@@ -93,11 +93,13 @@ while ($fila = $resultat->fetch_assoc()) {
                 <td><?= $fila["idIncidencia"] ?></td>
                 <td> <?= $fila["descripcio"] ?> </td>
                 <td><?= $fila["nom"] ?> </td>
-                <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>">Crear Actuacio</a></td>
+                <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>&idTecnic=<?php echo $idTecnic?>">Crear Actuacio</a></td>
             </tr>
         <?php endif; ?>
         <?php endforeach; ?>
         </table>
         </tbody>
 
+
+<?php $link = 'tecnics.php'; ?>
 <?php include_once "footer.php"; ?>
