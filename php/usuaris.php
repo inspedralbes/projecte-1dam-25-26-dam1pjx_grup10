@@ -4,7 +4,7 @@
         resize: none;
     }
 </style>
-<div class="row">
+<div class="container text-center">
     <div class="col-12">
         <h1>Registar Incidència</h1>
         <form action="registrar_inci.php" method="POST">
@@ -20,17 +20,16 @@
             </div>
             <div class="form-group">
                 <label for="descripcio">Descripció</label>
-                <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" rows="4" required ></textarea>
+                <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" rows="4" cols="30" required ></textarea>
             </div>
             <div class="form-group"><button class="btn btn-success">Registrar</button></div>
         </form>
     </div>
 </div>
 <hr>
-<div class="row">
+<div class="container text-center">
     <div class="col-12">
         <h1>Consultar estat Incidència</h1>
-
 
         <form action="llistar_inci_id.php" method="GET">
             <div class="form-group">
