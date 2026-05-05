@@ -5,13 +5,23 @@ textarea {
 button{
     margin-top: 10px;
 }
-body{
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
     background-color: #CEC2EB;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    padding: 0;
 }
-a{
-
+main {
+    align-self: start;
 }
-
 
 .container-gran {
     max-width: 1200px;

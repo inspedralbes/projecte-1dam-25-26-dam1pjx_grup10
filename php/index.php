@@ -1,8 +1,5 @@
 
-<header>
     <?php include_once "header.php"?>
-
-</header>
 
 <div class="container text-center">
     <h2> Benvigut a la pàgina principal de gestió d'incidències </h2>
