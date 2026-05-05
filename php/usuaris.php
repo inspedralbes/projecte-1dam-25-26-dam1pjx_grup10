@@ -7,7 +7,7 @@
 <div class="container">
     <div class="text-center">
         <h1>Registar Incidència</h1>
-        <form action="registrar_inci.php" method="POST">
+        <form name="formRegInci" action="registrar_inci.php" method="POST" >
             <div class="form-group">
                 <label for="departament">Departament</label>
                 <select name="departament" id="departament" required>
