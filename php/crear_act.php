@@ -3,10 +3,10 @@
 <div class="container">
     <div class="text-center">
         <h1>Registar Actuació</h1>
-        <form action="registrar_act.php" method="POST">
+        <form action="registrar_act.php" method="POST" name="crear_Act" onsubmit="return validarCrearAct()">
             <div class="form-group">
                 <label for="temps_trigat">Temps Trigat</label>
-                <select name="temps_trigat" id="temps_trigat"  required>
+                <select name="temps_trigat" id="temps_trigat">
                     <option value="" selected disabled>-- Selecciona Temps Trigat --</option>
                     <option value="5">5min</option>
                     <option value="10">10min</option>
@@ -24,7 +24,7 @@
                 <table>
                     <td>
                         <label for="descripcio">Descripción</label>
-                        <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" cols="30" rows="10" required></textarea>
+                        <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" cols="30" rows="10" ></textarea>
                     </td>
                     <td>
                         <label for="visible">Visible per l'usuari</label>

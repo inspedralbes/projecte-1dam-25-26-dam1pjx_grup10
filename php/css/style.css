@@ -23,6 +23,20 @@ main {
     align-self: start;
 }
 
+.superposat{
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.confirmacio{
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+}
+
 .container-gran {
     max-width: 1200px;
     margin: 0 auto;

@@ -2,7 +2,7 @@
 <div class="container-mitja">
     <div class="text-center">
         <h1>Gestió  d'Incidències Com a Tecnic</h1>
-        <form action="llistar_inci_tecnic.php" method="GET">
+        <form action="llistar_inci_tecnic.php" method="GET" name="incidencies_tecnics" onsubmit="return validarNumTec()">
             <div class="form-group">
                 <h3>Digues el teu id de Tecnic</h3>
                 <label for="idTecnic"></label>

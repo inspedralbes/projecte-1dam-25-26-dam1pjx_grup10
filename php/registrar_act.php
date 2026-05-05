@@ -16,3 +16,15 @@ if ($finalizat == 1) {
 }
 $sentencia->bind_param("iisi", $incidencia,$temps, $descripcio, $visible);
 $sentencia->execute();
+?>
+
+<div class="superposat" id="superposat">
+    <div class="confirmacio">
+        <h2>Actuació registrada!</h2>
+        <p>L'actuació s'ha registrat</p>
+        <a href="tecnics.php">D'acord </a>
+
+    </div>
+
+
+</div>
