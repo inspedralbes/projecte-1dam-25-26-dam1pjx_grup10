@@ -17,4 +17,5 @@ $sentencia->execute();
 
 <h2>Actualització correcte</h2>
 
+<?php $link = 'incidencies_pa.php'; ?>
 <?php include_once "footer.php"; ?>
