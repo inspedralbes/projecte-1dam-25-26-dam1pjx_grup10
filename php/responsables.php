@@ -1,20 +1,20 @@
 <?php include_once("header.php"); ?>
-<div class="row">
-    <div class="col-12">
+<div class="container">
+    <div class="text-center">
         <h1>Hola, Responsable: Gestió  d'Incidències</h1>
             <div class="form-group">
                 <h3>Incidències no resoltes</h3>
-                <button onclick="location.href='./incidencies_nr.php'">Veure</button>
+                <a href="./incidencies_nr.php" class="btn btn-outline-primary">Veure</a>
             </div>
             <div class="form-group">
                 <h3>Incidències pendents d'assignar</h3>
-                <button onclick="location.href='./incidencies_pa.php'">Veure</button>
+                <a href="./incidencies_pa.php" class="btn btn-outline-primary">Veure</a>
             </div>
         <br>
         <br>
             <div class="form-group">
-                <button onclick="location.href='./informe_tecnics.php'">Informe de Tècnics</button>
-                <button onclick="location.href='./consum_departament.php'">Consum per Departaments</button>
+                <a href="./informe_tecnics.php" class="btn btn-outline-primary">Informe de Tècnics</a>
+                <a href="./consum_departament.php" class="btn btn-outline-primary">Consum per Departaments</a>
             </div>
     </div>
 </div>

@@ -30,6 +30,7 @@ while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
 ?>
+<div class="container-gran">
     <h1>Llistat d'incidències assignades</h1>
         <tbody>
         <h3>Prioritat Alta</h3>
@@ -99,7 +100,7 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php endforeach; ?>
         </table>
         </tbody>
-
+</div>
 
 <?php $link = 'tecnics.php'; ?>
 <?php include_once "footer.php"; ?>

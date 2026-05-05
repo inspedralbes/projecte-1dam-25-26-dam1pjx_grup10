@@ -6,12 +6,36 @@ button{
     margin-top: 10px;
 }
 body{
-    background-color: lightskyblue;
+    background-color: #CEC2EB;
 }
+a{
+
+}
+
+
+.container-gran {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
 
 .container {
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container-mitja {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 10px;
     padding: 20px;
     background-color: white;
     border-radius: 10px;

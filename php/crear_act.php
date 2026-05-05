@@ -1,12 +1,12 @@
 <?php include_once "header.php"; ?>
 <?php $idIncidencia = intval($_GET['idIncidencia']); ?>
-<div class="row">
-    <div class="col-12">
+<div class="container">
+    <div class="text-center">
         <h1>Registar Actuació</h1>
         <form action="registrar_act.php" method="POST">
             <div class="form-group">
                 <label for="temps_trigat">Temps Trigat</label>
-                <select name="temps_trigat" id="temps_trigat" required>
+                <select name="temps_trigat" id="temps_trigat"  required>
                     <option value="" selected disabled>-- Selecciona Temps Trigat --</option>
                     <option value="5">5min</option>
                     <option value="10">10min</option>
@@ -39,7 +39,7 @@
             </div>
                 <input type="hidden" name="idIncidencia" value="<?= $idIncidencia ?>">
 
-                <div class="form-group"><button class="btn btn-success">Guardar</button></div>
+                <div class="form-group"><button class="btn btn-outline-primary">Guardar</button></div>
             </div>
        </form>
     </div>

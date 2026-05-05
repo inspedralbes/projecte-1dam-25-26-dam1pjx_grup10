@@ -16,6 +16,7 @@ while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
 ?>
+<div class="container-mitja">
     <h4>Data Fi</h4>
     <?php if (empty($dades) || is_null($dades[0]["data_fi"])): ?>
         <p>Pendent</p>
@@ -42,6 +43,6 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php endforeach; ?>
     </tbody>
 </table>
-
+</div>
 <?php $link = 'usuaris.php'; ?>
 <?php include_once "footer.php"; ?>

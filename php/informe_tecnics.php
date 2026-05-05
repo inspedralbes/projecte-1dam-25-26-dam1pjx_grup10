@@ -18,7 +18,7 @@ while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
 ?>
-
+<div class="container-gran">
 <h2>Informe Tecnics</h2>
 
 <table class="table">
@@ -45,5 +45,6 @@ while ($fila = $resultat->fetch_assoc()) {
     <?php endforeach; ?>
     </tbody>
 </table>
+</div>
 <?php $link = 'responsables.php'; ?>
 <?php include_once "footer.php"; ?>
