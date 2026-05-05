@@ -4,19 +4,20 @@
 
 </header>
 
-<h2> Benvigut a la pàgina principal de gestió d'incidències </h2>
+<div class="container text-center">
+    <h2> Benvigut a la pàgina principal de gestió d'incidències </h2>
 
-<h4> Qui ets? </h4>
+    <h4> Qui ets? </h4>
 
-<ul>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="./usuaris.php" class="nav-link">Usuari</a></li>
+            <li class="list-group-item"><a href="./tecnics.php" class="nav-link">Tècnic</a></li>
+            <li class="list-group-item"><a href="./responsables.php" class="nav-link">Responsable</a></li>
 
-    <!-- TODO: afegir les pàgines de tècnic i responsable-->
-    <li> <a href="./usuaris.php"> Usuari </a>  </li>
-    <li> <a href="tecnics.php"> Tècnic </a>  </li>
-    <li> <a href="./responsables.php"> Responsable </a>  </li>
+        </ul>
+</div>
 
-</ul>
+
 
 <?php $link = 'index.php'; ?>
-
-    <?php include_once "footer.php"?>
+<?php include_once "footer.php"?>
