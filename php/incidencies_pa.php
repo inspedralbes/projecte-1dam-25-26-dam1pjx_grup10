@@ -16,7 +16,7 @@ while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
 ?>
-<div class="container-mitja">
+<div class="container-mitja text-center">
 <h2>Incidencies Pendents d'Assignar</h2>
 
 <table class="table">
@@ -38,7 +38,7 @@ while ($fila = $resultat->fetch_assoc()) {
                 <td><?= $fila["data_inici"] ?></td>
                 <td><?= $fila["nom_dpt"] ?></td>
                 <td></td>
-                <td> <a href="edit_incidencia.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>">Editar</a></td>
+                <td> <a href="edit_incidencia.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>" class="btn btn-outline-primary">Editar</a></td>
 
             </tr>
 

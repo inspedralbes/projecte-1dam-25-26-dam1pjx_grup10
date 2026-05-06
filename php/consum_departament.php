@@ -21,7 +21,7 @@ while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
 ?>
-<div class="container-mitja">
+<div class="container-mitja text-center">
 <h2>Informe per departaments</h2>
 
 <table class="table">
