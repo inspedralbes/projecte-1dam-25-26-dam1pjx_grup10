@@ -16,6 +16,31 @@ $dades = [];
 while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
+
+$sentencia2 = $mysqli->prepare("SELECT idTecnic, cognom
+FROM TECNIC");
+
+$sentencia2->execute();
+
+$resultat2 = $sentencia2->get_result();
+$dades2 = [];
+
+while ($fila2 = $resultat2->fetch_assoc()) {
+    $dades2[] = $fila2;
+}
+
+
+$sentencia3 = $mysqli->prepare("SELECT idTipus, nom
+FROM TIPOLOGIA");
+
+$sentencia3->execute();
+
+$resultat3 = $sentencia3->get_result();
+$dades3 = [];
+
+while ($fila3 = $resultat3->fetch_assoc()) {
+    $dades3[] = $fila3;
+}
 ?>
 <div class="container-mitja text-center">
 <table class="table">
@@ -64,20 +89,23 @@ while ($fila = $resultat->fetch_assoc()) {
         <div class="form-group">
                         <label for="tipologia">Tipologia</label>
                         <select name="tipologia" id="tipologia">
-                            <option value="" disabled selected>-- Selecciona la tipologia --</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="" disabled selected> --Selecciona la tipologia -- </option>
+                                                <?php foreach ($dades3 as $fila3): ?>
+                                                <option value="<?= $fila3["idTipus"] ?>"> <?= $fila3["nom"]?> </option>
+                                                <?php endforeach; ?>
 
                         </select>
                     </div>
                 <br>
             <div class="form-group">
-                <label for="tecnic">Tècnic</label>
-                       <textarea name="tecnic" placeholder="Indica l'ID del tècnic assignat"></textarea>
-                   </div>
+                 <label for="idTecnic">Tècnic</label>
+                    <select name="idTecnic" id="idTecnic">
+                    <option value="" disabled selected> --Selecciona el tècnic -- </option>
+                    <?php foreach ($dades2 as $fila2): ?>
+                    <option value="<?= $fila2["idTecnic"] ?>"> <?= $fila2["cognom"]?> </option>
+                    <?php endforeach; ?>
+                    </select>
+            </div>
         <div class="form-group"><button class="btn btn-outline-primary">Confirmar</button></div>
 
         <input id="idIncidencia" name="idIncidencia" type="hidden" value="<?php echo $id?>" />

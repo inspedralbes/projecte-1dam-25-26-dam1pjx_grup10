@@ -1,4 +1,20 @@
-<?php include_once "header.php"; ?>
+<?php include_once "header.php";?>
+
+<?php
+$mysqli = require_once 'connexio.php';
+$sentencia = $mysqli->prepare("SELECT idDepartament, nom
+FROM DEPARTAMENT
+ ");
+$sentencia->execute();
+
+$resultat = $sentencia->get_result();
+$dades = [];
+
+while ($fila = $resultat->fetch_assoc()) {
+    $dades[] = $fila;
+}
+
+?>
 <style>
     textarea {
         resize: none;
@@ -11,11 +27,10 @@
             <div class="form-group">
                 <label for="departament">Departament</label>
                 <select name="departament" id="departament" name="departament">
-                    <option value="" selected disabled>-- Selecciona departament --</option>
-                    <option value="1">Informàtica</option>
-                    <option value="2">Català</option>
-                    <option value="3">Castellà</option>
-                    <option value="4">Matemàtiques</option>
+                    <option value="" disabled selected> --Selecciona el departament -- </option>
+                    <?php foreach ($dades as $fila): ?>
+                    <option value="<?= $fila["idDepartament"] ?>"> <?= $fila["nom"]?> </option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-group">
@@ -45,11 +60,10 @@
                 <div class="form-group">
                     <label for="departament">Departament</label>
                     <select name="departament" id="departament">
-                        <option value="" disabled selected>-- Selecciona departament --</option>
-                        <option value="1">Informàtica</option>
-                        <option value="2">Català</option>
-                        <option value="3">Castellá</option>
-                        <option value="4">Matemàtiques</option>
+                    <option value="" disabled selected> --Selecciona el departament -- </option>
+                    <?php foreach ($dades as $fila): ?>
+                    <option value="<?= $fila["idDepartament"] ?>"> <?= $fila["nom"]?> </option>
+                    <?php endforeach; ?>
                     </select>
                 </div>
             <div class="form-group"><button class="btn btn-outline-primary">Trobar</button></div>
