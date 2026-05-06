@@ -1,3 +1,4 @@
+<?php include_once "header.php"; ?>
 <?php
 $mysqli = require_once 'connexio.php';
 $temps = $_POST["temps_trigat"];
@@ -17,14 +18,17 @@ if ($finalizat == 1) {
 $sentencia->bind_param("iisi", $incidencia,$temps, $descripcio, $visible);
 $sentencia->execute();
 ?>
-
-<div class="superposat" id="superposat">
+<div class="container">
+<div id="superposat">
     <div class="confirmacio">
         <h2>Actuació registrada!</h2>
         <p>L'actuació s'ha registrat</p>
-        <a href="tecnics.php">D'acord </a>
+        <a href="tecnics.php" class="btn btn-outline-primary">D'acord </a>
 
     </div>
 
 
 </div>
+</div>
+<?php $link = 'usuaris.php'; ?>
+<?php include_once "footer.php"; ?>

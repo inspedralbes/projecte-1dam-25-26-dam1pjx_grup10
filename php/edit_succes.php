@@ -14,8 +14,8 @@ WHERE idIncidencia = $idIncidencia");
 $sentencia->bind_param("sii", $prioritat, $tipologia, $tecnic);
 $sentencia->execute();
 ?>
-
+<div class="container">
 <h2>Actualització correcte</h2>
-
+</div>
 <?php $link = 'incidencies_pa.php'; ?>
 <?php include_once "footer.php"; ?>

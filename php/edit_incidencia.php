@@ -17,7 +17,7 @@ while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
 ?>
-
+<div class="container-mitja text-center">
 <table class="table">
     <thead>
         <tr>
@@ -47,7 +47,8 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php endforeach; ?>
     </tbody>
 </table>
-
+</div>
+<div class="container text-center">
 <form action="edit_succes.php" method="GET">
             <div class="form-group">
                 <label for="prioritat">Prioritat</label>
@@ -77,11 +78,11 @@ while ($fila = $resultat->fetch_assoc()) {
                 <label for="tecnic">Tècnic</label>
                        <textarea name="tecnic" placeholder="Indica l'ID del tècnic assignat"></textarea>
                    </div>
-        <div class="form-group"><button class="btn btn-success">Confirmar</button></div>
+        <div class="form-group"><button class="btn btn-outline-primary">Confirmar</button></div>
 
         <input id="idIncidencia" name="idIncidencia" type="hidden" value="<?php echo $id?>" />
         </form>
-
+</div>
 
 
 <?php $link = 'incidencies_pa.php'; ?>

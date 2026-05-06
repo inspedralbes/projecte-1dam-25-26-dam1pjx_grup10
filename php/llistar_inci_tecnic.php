@@ -30,7 +30,7 @@ while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
 ?>
-<div class="container-gran">
+<div class="container-gran text-center">
     <h1>Llistat d'incidències assignades</h1>
         <tbody>
         <h3>Prioritat Alta</h3>
