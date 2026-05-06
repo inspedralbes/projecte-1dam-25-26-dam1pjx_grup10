@@ -74,7 +74,7 @@ while ($fila3 = $resultat3->fetch_assoc()) {
 </table>
 </div>
 <div class="container text-center">
-<form action="edit_succes.php" method="GET">
+<form action="edit_succes.php" method="GET" name="editar_incidencia" onsubmit="return validarCampsEditInc()">
             <div class="form-group">
                 <label for="prioritat">Prioritat</label>
                 <select name="prioritat" id="prioritat">

@@ -45,3 +45,14 @@ function validarNumTec(){
         return false;
     }
 }
+
+function validarCampsEditInc(){
+    let x = document.forms["editar_incidencia"]["prioritat"].value;
+    let y = document.forms["editar_incidencia"]["tipologia"].value;
+    let z = document.forms["editar_incidencia"]["idTecnic"].value;
+
+    if (x==="" || y === "" || z === ""){
+        alert("Falten camps per emplenar");
+        return false;
+    }
+}

@@ -5,7 +5,7 @@ $mysqli = include_once "connexio.php";
 $idIncidencia = intval($_GET["idIncidencia"]);
 $prioritat = strval($_GET["prioritat"]);
 $tipologia = intval($_GET["tipologia"]);
-$tecnic = intval($_GET["tecnic"]);
+$tecnic = intval($_GET["idTecnic"]);
 
 
 $sentencia = $mysqli->prepare("UPDATE INCIDENCIA SET
@@ -14,7 +14,7 @@ WHERE idIncidencia = $idIncidencia");
 $sentencia->bind_param("sii", $prioritat, $tipologia, $tecnic);
 $sentencia->execute();
 ?>
-<div class="container">
+<div class="container text-center">
 <h2>Actualització correcte</h2>
 </div>
 <?php $link = 'incidencies_pa.php'; ?>
