@@ -1,6 +1,6 @@
 
     <?php include_once "header.php"?>
-
+    <?php // include_once "connexio_mongo.php"?>
 <div class="container text-center">
     <h2> Benvigut a la pàgina principal de gestió d'incidències </h2>
 
