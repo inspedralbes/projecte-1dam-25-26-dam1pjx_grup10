@@ -1,4 +1,5 @@
 <?php include_once "header.php"; ?>
+<?php include_once "connexio_mongo.php"?>
 <?php
 $mysqli = require_once 'connexio.php';
 

@@ -1,4 +1,5 @@
 <?php include_once("header.php"); ?>
+<?php include_once "connexio_mongo.php"?>
 <div class="container">
     <div class="text-center">
         <h1>Hola, Responsable: Gestió  d'Incidències</h1>
