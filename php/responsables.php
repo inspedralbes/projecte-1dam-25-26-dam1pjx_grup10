@@ -16,6 +16,7 @@
                 <a href="./informe_tecnics.php" class="btn btn-outline-primary">Informe de Tècnics</a><br>
                 <a href="./consum_departament.php" class="btn btn-outline-primary">Consum per Departaments</a><br>
                 <a href="./estadistiques.php" class="btn btn-outline-primary">Estadístiques Accessos</a><br>
+                <a href="./grafic.php" class="btn btn-outline-primary">Grafic</a><br>
             </div>
     </div>
 </div>
