@@ -20,7 +20,6 @@ $collection->insertOne([
     'ip' => $ip,
     'temps_resposta_ms'=> $tempsResposta
 ]);
-echo "Dades inserides a demo .\n";
 
 
 
