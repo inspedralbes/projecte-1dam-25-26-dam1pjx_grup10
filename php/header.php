@@ -13,16 +13,19 @@
 
 
     <div class="container-gran">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <header class="py-3 mb-4">
+            <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
                 <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg>
-                <span class="fs-2">Aplicació de gestió d'Incidències informàtiques</span> </a>
-                <ul class="nav nav-pills">
+                <span class="fs-2">Aplicació de gestió d'Incidències informàtiques</span>
+            </a>
+            <div class="border-top pt-2">
+                <ul class="nav nav-pills justify-content-center">
                     <li class="nav-item"><a href="./index.php" class="nav-link">Inici</a></li>
                     <li class="nav-item"><a href="./usuaris.php" class="nav-link">Usuari</a></li>
                     <li class="nav-item"><a href="./tecnics.php" class="nav-link">Tècnic</a></li>
                     <li class="nav-item"><a href="./responsables.php" class="nav-link">Responsable</a></li>
                 </ul>
+            </div>
         </header>
     </div>
     <main class="container-fluid">

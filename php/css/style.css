@@ -46,6 +46,20 @@ main {
     border-radius: 10px;
 }
 
+.container-gran header {
+    padding-top: 8px;
+    padding-bottom: 4px;
+    margin-bottom: 0 ;
+}
+
+.container-gran header a {
+    margin-bottom: -50px ;
+}
+
+.container-gran header .border-top {
+    padding-top: 4px ;
+}
+
 
 .container {
     max-width: 600px;
