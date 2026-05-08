@@ -11,11 +11,11 @@
                 <h3>Incidències pendents d'assignar</h3>
                 <a href="./incidencies_pa.php" class="btn btn-outline-primary">Veure</a>
             </div>
-        <br>
-        <br>
+        <hr>
             <div class="form-group">
-                <a href="./informe_tecnics.php" class="btn btn-outline-primary">Informe de Tècnics</a>
-                <a href="./consum_departament.php" class="btn btn-outline-primary">Consum per Departaments</a>
+                <a href="./informe_tecnics.php" class="btn btn-outline-primary">Informe de Tècnics</a><br>
+                <a href="./consum_departament.php" class="btn btn-outline-primary">Consum per Departaments</a><br>
+                <a href="./estadistiques.php" class="btn btn-outline-primary">Estadístiques Accessos</a><br>
             </div>
     </div>
 </div>
