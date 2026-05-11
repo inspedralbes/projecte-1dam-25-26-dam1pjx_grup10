@@ -1,7 +1,7 @@
 <?php
 require  'vendor/autoload.php';
 $inicio = microtime(true);
-$uri = "mongodb+srv://projecte-1dam-25-26-dam1pj10_user:****@projecte-1dam-25-26-dam.u52motu.mongodb.net/";
+$uri = "mongodb+srv://projecte-1dam-25-26-dam1pj10_user: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@projecte-1dam-25-26-dam.u52motu.mongodb.net/";
 $client = new MongoDB\Client($uri);
 $collection = $client->REGISTRE->LOGS;
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
