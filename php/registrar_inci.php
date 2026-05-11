@@ -13,8 +13,14 @@ $sentencia->execute();
 
 $ultimID = $mysqli->insert_id;
 
+$sentencia2 = $mysqli->prepare("SELECT nom FROM DEPARTAMENT WHERE idDepartament = $departament");
+$sentencia2->execute();
+
+$resultat2 = $sentencia2->get_result();
+$nom_dept = $resultat2->fetch_assoc();
+
 mail('a25josmonces@inspedralbes.cat, a25izagomdel@inspedralbes.cat', 'Nova incidència registrada',
-"S'ha registrat una nova incidència del departament de " . $_POST['departament'] . "\nDescripció:\n" . $_POST['descripcio']
+"S'ha registrat una nova incidència del departament de " . $nom_dept . "\nDescripció:\n" . $_POST['descripcio']
 );
 
 ?>
