@@ -24,7 +24,7 @@
             <div class="form-group">
                 <table>
                     <td>
-                        <label for="descripcio">Descripción</label>
+                        <label for="descripcio">Descripció</label>
                         <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" cols="30" rows="10" ></textarea>
                     </td>
                     <td>

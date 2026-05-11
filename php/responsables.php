@@ -2,7 +2,7 @@
 <?php include_once "connexio_mongo.php"?>
 <div class="container">
     <div class="text-center">
-        <h1>Hola, Responsable: Gestió  d'Incidències</h1>
+        <h1>Hola, Responsable <br> Gestió  d'Incidències:</h1>
             <div class="form-group">
                 <h3>Incidències no resoltes</h3>
                 <a href="./incidencies_nr.php" class="btn btn-outline-primary">Veure</a>
@@ -16,7 +16,7 @@
                 <a href="./informe_tecnics.php" class="btn btn-outline-primary">Informe de Tècnics</a><br>
                 <a href="./consum_departament.php" class="btn btn-outline-primary">Consum per Departaments</a><br>
                 <a href="./estadistiques.php" class="btn btn-outline-primary">Estadístiques Accessos</a><br>
-                <a href="./grafic.php" class="btn btn-outline-primary">Grafic</a><br>
+                <a href="./grafic.php" class="btn btn-outline-primary">Gràfic</a><br>
             </div>
     </div>
 </div>
