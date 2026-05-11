@@ -19,6 +19,6 @@ $ultimID = $mysqli->insert_id;
 <p>L'ID de la teva incidència és <?php echo $ultimID ?> </p>
 <a href="./index.php" class="btn btn-outline-primary">Finalitzar</a>
 </div>
-
+<?php include_once "correu.php" ;?>
 <?php $link = 'usuaris.php'; ?>
 <?php include_once "footer.php"; ?>
