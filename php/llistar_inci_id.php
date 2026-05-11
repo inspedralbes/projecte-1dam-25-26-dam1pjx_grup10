@@ -4,7 +4,7 @@
 $mysqli = require_once 'connexio.php';
 $id = intval($_GET["idIncidencia"]);
 
-$sentencia = $mysqli->prepare("SELECT *, act.descripcio as 'act_desc' FROM ACTUACIO act
+$sentencia = $mysqli->prepare("SELECT *, act.descripcio as 'act_desc', inci.descripcio as 'inci_desc' FROM ACTUACIO act
     join INCIDENCIA inci on act.incidencia = inci.idIncidencia
     WHERE incidencia = ?");
 $sentencia->bind_param("i", $id);
@@ -16,14 +16,22 @@ $dades = [];
 while ($fila = $resultat->fetch_assoc()) {
     $dades[] = $fila;
 }
+
+$sentencia2 = $mysqli->prepare("SELECT descripcio as inci_desc from INCIDENCIA WHERE idIncidencia = ?");
+$sentencia2->bind_param("i", $id);
+$sentencia2->execute();
+$resultat2 = $sentencia2->get_result();
+$dades2 = $resultat2->fetch_assoc();
 ?>
 <div class="container-mitja">
-    <h4>Data Fi</h4>
+    <h4>Estat Incidencia</h4>
     <?php if (empty($dades) || is_null($dades[0]["data_fi"])): ?>
-        <p>Pendent</p>
+        <p><b>Pendent</b></p>
     <?php else: ?>
-        <p><?= $dades[0]["data_fi"] ?></p>
+        <p><b>Resolta</b> el dia: <?= $dades[0]["data_fi"] ?></p>
     <?php endif; ?>
+    <h4>Decripció Incidencia</h4>
+    <?php echo $dades2["inci_desc"] ?>
 <table class="table">
     <thead>
         <tr>
