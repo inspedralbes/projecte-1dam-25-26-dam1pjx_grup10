@@ -13,8 +13,9 @@ $sentencia->execute();
 
 $ultimID = $mysqli->insert_id;
 
-mail('a25josmonces@inspedralbes.cat, a25izagomdel@inspedralbes.cat', 'Nova incidència registrada', 'S\'ha registrat una nova incidència
-del departament de ' $_POST['departament'] '\n' 'Descripció: \n ' $_POST['descripcio']);
+mail('a25josmonces@inspedralbes.cat, a25izagomdel@inspedralbes.cat', 'Nova incidència registrada',
+"S'ha registrat una nova incidència del departament de " . $_POST['departament'] . "\nDescripció:\n" . $_POST['descripcio']
+);
 
 ?>
 
