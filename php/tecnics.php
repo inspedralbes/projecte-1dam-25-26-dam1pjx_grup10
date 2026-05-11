@@ -19,7 +19,7 @@ while ($fila = $resultat->fetch_assoc()) {
 
 <div class="container-mitja">
     <div class="text-center">
-        <h1>Gestió  d'Incidències Com a Tecnic</h1>
+        <h1>Gestió  d'Incidències Com a Tècnic</h1>
         <form action="llistar_inci_tecnic.php" method="GET" name="incidencies_tecnics" onsubmit="return validarNumTec()">
             <div class="form-group">
                 <h3>Quin tècnic ets?</h3>

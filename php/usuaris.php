@@ -25,7 +25,7 @@ while ($fila = $resultat->fetch_assoc()) {
 </style>
 <div class="container">
     <div class="text-center">
-        <h1>Registar Incidència</h1>
+        <h1>Registrar Incidència</h1>
         <form name="formRegInci" action="registrar_inci.php" method="POST" onsubmit="return validarRegInc()" >
             <div class="form-group">
                 <label for="departament">Departament</label>

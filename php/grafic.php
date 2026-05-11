@@ -58,5 +58,5 @@ foreach ($dades as $fila) {
             }
         });
     </script>
-
+<?php $link = 'responsables.php' ?>
 <?php include("footer.php"); ?>
