@@ -24,6 +24,10 @@ $resultat2 = $sentencia2->get_result();
 $dades2 = $resultat2->fetch_assoc();
 ?>
 <div class="container-mitja">
+
+    <?php if (empty($dades)):;?>
+    <h4>No hi ha cap Incidència amb aquesta ID, si no recordes la teva ID prova a buscar per Departament.</h4>
+    <?php else: ?>
     <h4>Estat Incidencia</h4>
     <?php if (empty($dades) || is_null($dades[0]["data_fi"])): ?>
         <p><b>Pendent</b></p>
@@ -53,5 +57,7 @@ $dades2 = $resultat2->fetch_assoc();
     </tbody>
 </table>
 </div>
+
+<?php endif; ?>
 <?php $link = 'usuaris.php'; ?>
 <?php include_once "footer.php"; ?>
