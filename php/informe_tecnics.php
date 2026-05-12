@@ -26,7 +26,7 @@ while ($fila = $resultat->fetch_assoc()) {
     <thead>
     <tr>
         <th>Tècnic</th>
-        <th>Incidencia</th>
+        <th>ID Incidencia</th>
         <th>Prioritat</th>
         <th>Data inici</th>
         <th>Data fi</th>
@@ -41,7 +41,7 @@ while ($fila = $resultat->fetch_assoc()) {
             <td><?= $fila["prioritat"] ?></td>
             <td><?= $fila["data_inici"] ?></td>
             <td><?= $fila["data_fi"] ?></td>
-            <td><?= $fila["temps"] ?></td>
+            <td><?= $fila["temps"] ?>min</td>
         </tr>
     <?php endforeach; ?>
     </tbody>

@@ -38,7 +38,7 @@ while ($fila = $resultat->fetch_assoc()) {
         <tr>
             <td><?= $fila["departament"] ?></td>
             <td><?= $fila["total_incidencies"]?></td>
-            <td><?= $fila["temps_total"] ?></td>
+            <td><?= $fila["temps_total"] ?>min</td>
         </tr>
 
         <?php endforeach; ?>

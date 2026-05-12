@@ -25,7 +25,7 @@ $dades2 = $resultat2->fetch_assoc();
 ?>
 <div class="container-mitja">
 
-    <?php if (empty($dades)):;?>
+    <?php if (empty($dades2)):;?>
     <h4>No hi ha cap Incidència amb aquesta ID, si no recordes la teva ID prova a buscar per Departament.</h4>
     <?php else: ?>
     <h4>Estat Incidencia</h4>
@@ -50,7 +50,7 @@ $dades2 = $resultat2->fetch_assoc();
         <tr>
             <td>Actuació <?= $comptador ?></td>
             <td><?= $fila["visible"]==1 ? $fila["act_desc"] : "No hi ha informació disponible"?></td>
-            <td><?= $fila["temps"] ?></td>
+            <td><?= $fila["temps"] ?> min</td>
         </tr>
         <?php $comptador++; ?>
         <?php endforeach; ?>
