@@ -4,14 +4,37 @@
 <?php
 $mysqli = require_once 'connexio.php';
 
+$inci_per_page = 10;
+
+$pagina = 1;
+if (isset($_GET['pagina'])) {
+    $pagina = $_GET['pagina'];
+}
+
+$limit = $inci_per_page;
+
+$offset = ($pagina - 1) * $inci_per_page;
+
+$sentencia_count = $mysqli->prepare("
+    SELECT COUNT(DISTINCT inci.idIncidencia) AS num_pages 
+    FROM INCIDENCIA inci
+    INNER JOIN TECNIC tec ON inci.tecnic = tec.idTecnic
+    INNER JOIN ACTUACIO act ON act.incidencia = inci.idIncidencia
+");
+$sentencia_count->execute();
+$contador = $sentencia_count->get_result()->fetch_object()->num_pages;
+
+$incidencies = ceil($contador / $inci_per_page);
+
 $sentencia = $mysqli->prepare("SELECT tec.nom, inci.idIncidencia, inci.prioritat, inci.data_inici, inci.data_fi ,sum(act.temps) as temps 
 FROM TECNIC tec
 join INCIDENCIA inci on inci.tecnic = tec.idTecnic
 join ACTUACIO act on act.incidencia = inci.idIncidencia
 group by tec.nom, inci.idIncidencia, inci.prioritat, inci.data_inici
-order by tec.nom, inci.prioritat");
+order by tec.nom, inci.prioritat 
+LIMIT ? OFFSET ?");
+$sentencia->execute([$limit, $offset]);
 
-$sentencia->execute();
 
 $resultat = $sentencia->get_result();
 $dades = [];
@@ -47,6 +70,14 @@ while ($fila = $resultat->fetch_assoc()) {
     <?php endforeach; ?>
     </tbody>
 </table>
+    <div class="d-flex justify-content-center mt-3">
+        <?php for ($i = 1; $i <= $incidencies; $i++): ?>
+            <a href="?pagina=<?= $i ?>"
+               class="btn <?= $i == $pagina ? 'btn-primary' : 'btn-outline-primary' ?> mx-1">
+                <?= $i ?>
+            </a>
+        <?php endfor; ?>
+    </div>
 </div>
 <?php $link = 'responsables.php'; ?>
 <?php include_once "footer.php"; ?>
