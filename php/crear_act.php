@@ -1,4 +1,4 @@
-<?php include_once "auth.php"?>
+<?php include_once "auth_tecnic.php"?>
 <?php include_once "header.php"; ?>
 <?php include_once "connexio_mongo.php"?>
 <?php $idIncidencia = intval($_GET['idIncidencia']); ?>
