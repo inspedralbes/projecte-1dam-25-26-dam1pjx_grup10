@@ -126,7 +126,7 @@ echo "<h2> Usuaris més actius</h2>\n";
 $pipeline_usumesact = [
     [
         '$group' => [
-            '_id' => '$ip',
+            '_id' => '$usuari_id',
             'total' => ['$sum' => 1]
         ]
     ],
@@ -141,7 +141,7 @@ $pipeline_usumesact = [
     [
         '$project' => [
             '_id' => 0,
-            'ip' => '$_id',
+            'usuari_id' => '$_id',
             'total' => 1
         ]
     ]
@@ -151,15 +151,17 @@ $resultados = $collection->aggregate($pipeline_usumesact);
 <table class="table">
     <thead>
     <tr>
-        <th>IP</th>
+        <th>Usuaris més actius</th>
         <th>Total Visites</th>
     </tr>
     </thead>
     <tbody>
     <?php foreach ($resultados as $document): ?>
         <tr>
-            <td><?php echo $document->ip; ?></td>
+            <?php if ($document["usuari_id"] != null): ?>
+            <td><?php echo $document->usuari_id; ?></td>
             <td><?= $document["total"] ?></td>
+            <?php endif; ?>
         </tr>
 
     <?php endforeach; ?>
@@ -183,7 +185,7 @@ echo "<h2> Accessos Totals</h2>\n";
 $pipeline_totalaccess = [
     [
         '$match' => [
-        'url' => ['$regex' => 'index.php']
+        'url' => ['$regex' => 'login.php']
         ]
     ],
     [

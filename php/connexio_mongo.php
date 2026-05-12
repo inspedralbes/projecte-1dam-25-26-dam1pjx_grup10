@@ -14,7 +14,7 @@ $tempsResposta = round(($fin - $inicio) * 1000, 2);
 $collection->insertOne([
     'url' => $url,
     'metode' => $metodo,
-    'usuari_id' => 'Desconegut',
+    'usuari_id' => $_SESSION["usuari"],
     'data_inici_sessio' => $hora,
     'navegador' => $_SERVER['HTTP_USER_AGENT'],
     'ip' => $ip,
