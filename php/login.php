@@ -12,11 +12,14 @@ session_start();
 
 $usuaris = array(
 
-    "usuari" => "usuari",
+    "usuari" => array("passwd" => "usuari",
+                      "rol" => "usuari"),
 
-    "josep" => "josep",
+    "tecnic" => array("passwd" => "tecnic",
+                     "rol" => "tecnic"),
 
-    "izan" => "izan"
+    "admin" => array("passwd" => "admin",
+                     "rol" => "admin")
 
 );
 
@@ -30,7 +33,7 @@ $error = "";
 
 if (isset($_SESSION["usuari"])) {
 
-    header("Location: login_success.php");
+    header("Location: index.php");
 
     exit();
 
@@ -54,11 +57,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     */
 
-    if (isset($usuaris[$usuari]) && $usuaris[$usuari] == $password) {
+    if (isset($usuaris[$usuari]) && $usuaris[$usuari]["passwd"] == $password) {
 
         $_SESSION["usuari"] = $usuari;
+        $_SESSION["rols"]   = $usuaris[$usuari]["rol"];
 
-        header("Location: index.php");
+        if ($_SESSION["rols"] == "tecnic"){
+            header("Location: tecnics.php");
+
+        }elseif($_SESSION["rols"] == "admin"){
+            header("Location: responsables.php");
+
+        }else{
+            header("Location: usuaris.php");
+        }
+
+
+
+
 
         exit();
 

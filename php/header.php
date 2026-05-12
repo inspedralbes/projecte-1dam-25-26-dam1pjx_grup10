@@ -21,9 +21,15 @@
             <div class="border-top pt-2">
                 <ul class="nav nav-pills justify-content-center">
                     <li class="nav-item"><a href="./index.php" class="nav-link">Inici</a></li>
+                    <?php if ($_SESSION["rols"] == "usuari" || $_SESSION["rols"] == "admin" ||$_SESSION["rols"] == "tecnic" ): ?>
                     <li class="nav-item"><a href="./usuaris.php" class="nav-link">Usuari</a></li>
+                    <?php endif; ?>
+                    <?php if ($_SESSION["rols"] == "admin" ||$_SESSION["rols"] == "tecnic" ): ?>
                     <li class="nav-item"><a href="./tecnics.php" class="nav-link">Tècnic</a></li>
+                    <?php endif; ?>
+                    <?php if ($_SESSION["rols"] == "admin"): ?>
                     <li class="nav-item"><a href="./responsables.php" class="nav-link">Responsable</a></li>
+                    <?php endif; ?>
                     <li class="nav-item"><a href="./logout.php" class="nav-link"><img src="./img/logout_back-removebg-preview.png" alt="Tancar sessio" height="30px"></a></li>
                 </ul>
             </div>
