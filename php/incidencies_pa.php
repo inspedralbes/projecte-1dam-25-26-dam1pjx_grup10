@@ -2,13 +2,31 @@
 <?php include_once "connexio_mongo.php"?>
 <?php
 $mysqli = require_once 'connexio.php';
+$inci_per_page = 10;
+
+$pagina = 1;
+if (isset($_GET['pagina'])) {
+    $pagina = $_GET['pagina'];
+}
+
+$limit = $inci_per_page;
+
+$offset = ($pagina - 1) * $inci_per_page;
+
+$sentencia_count = $mysqli->prepare("SELECT count(*) AS num_pages FROM INCIDENCIA WHERE tecnic is null");
+$sentencia_count->execute();
+$contador = $sentencia_count->get_result()->fetch_object()->num_pages;
+
+$incidencies = ceil($contador / $inci_per_page);
 
 $sentencia = $mysqli->prepare("SELECT INCIDENCIA.idIncidencia,INCIDENCIA.data_inici, DEPARTAMENT.nom AS 'nom_dpt'
  FROM INCIDENCIA
   JOIN DEPARTAMENT ON INCIDENCIA.departament = DEPARTAMENT.idDepartament
   WHERE tecnic is NULL
-  ORDER BY INCIDENCIA.idIncidencia, DEPARTAMENT.idDepartament");
-$sentencia->execute();
+  ORDER BY INCIDENCIA.idIncidencia, DEPARTAMENT.idDepartament
+  LIMIT ? OFFSET ?");
+
+$sentencia->execute([$limit, $offset]);
 
 $resultat = $sentencia->get_result();
 $dades = [];
@@ -47,6 +65,14 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php endforeach; ?>
     </tbody>
 </table>
+    <div class="d-flex justify-content-center mt-3">
+        <?php for ($i = 1; $i <= $incidencies; $i++): ?>
+            <a href="?pagina=<?= $i ?>"
+               class="btn <?= $i == $pagina ? 'btn-primary' : 'btn-outline-primary' ?> mx-1">
+                <?= $i ?>
+            </a>
+        <?php endfor; ?>
+    </div>
 </div>
 <?php $link = 'responsables.php'; ?>
 <?php include_once "footer.php"; ?>
