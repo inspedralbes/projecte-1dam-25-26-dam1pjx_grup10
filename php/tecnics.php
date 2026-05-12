@@ -1,3 +1,4 @@
+<?php include_once "auth.php"?>
 <?php include_once("header.php"); ?>
 <?php include_once "connexio_mongo.php"?>
 

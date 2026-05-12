@@ -24,6 +24,7 @@
                     <li class="nav-item"><a href="./usuaris.php" class="nav-link">Usuari</a></li>
                     <li class="nav-item"><a href="./tecnics.php" class="nav-link">Tècnic</a></li>
                     <li class="nav-item"><a href="./responsables.php" class="nav-link">Responsable</a></li>
+                    <li class="nav-item"><a href="./logout.php" class="nav-link">Tancar Sessió</a></li>
                 </ul>
             </div>
         </header>
