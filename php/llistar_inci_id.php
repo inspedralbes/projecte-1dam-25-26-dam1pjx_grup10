@@ -50,8 +50,19 @@ $dades2 = $resultat2->fetch_assoc();
         <?php foreach ($dades as $fila): ?>
         <tr>
             <td>Actuació <?= $comptador ?></td>
-            <td><?= $fila["visible"]==1 ? $fila["act_desc"] : "No hi ha informació disponible"?></td>
+            <?php if ($_SESSION["rols"] == "admin" || $_SESSION["rols"] == "tecnic") {
+                echo ("<td>");
+                echo ($fila["act_desc"]);
+                echo ("</td>");}
+                else{
+             echo ("<td>");
+             echo ($fila["visible"]==1 ? $fila["act_desc"] : "No hi ha informació disponible");
+             echo ("</td>");
+            }
+
+            ?>
             <td><?= $fila["temps"] ?> min</td>
+
         </tr>
         <?php $comptador++; ?>
         <?php endforeach; ?>
@@ -60,5 +71,7 @@ $dades2 = $resultat2->fetch_assoc();
 </div>
 
 <?php endif; ?>
-<?php $link = 'usuaris.php'; ?>
+<?php  if ($_SESSION["rols"] == "admin" || $_SESSION["rols"] == "tecnic") { $link = 'tecnics.php';}
+    else { $link = 'usuaris.php';}
+?>
 <?php include_once "footer.php"; ?>

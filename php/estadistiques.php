@@ -2,9 +2,85 @@
 <?php include_once "header.php"?>
 <?php include_once "connexio_mongo.php"?>
 <?php
-echo "<div class='container'>\n";
-echo "<h2> Accesos per dia</h2>\n";
-$pipeline_dias = [
+    $filtre_data   = $_GET['data']   ?? '';
+    $filtre_usuari = $_GET['usuari'] ?? '';
+    $filtre_pagina = $_GET['pagina'] ?? '';
+
+    $match_base = [];
+
+    if ($filtre_data !== '') {
+        $match_base['data_inici_sessio'] = ['$regex' => ' ' . $filtre_data];
+    }
+    if ($filtre_usuari !== '') {
+        $match_base['usuari_id'] = ['$regex' => $filtre_usuari, '$options' => 'i'];
+    }
+    if ($filtre_pagina !== '') {
+        $match_base['url'] = ['$regex' => $filtre_pagina, '$options' => 'i'];
+    }
+?>
+<div class="container-mitja">
+            <div class="card-header bg-white py-3">
+                <h6 class="mb-0 fw-bold"><i class="bi bi-filter"></i> Filtres d'estadístiques</h6>
+            </div>
+            <div class="card-body">
+                <form method="GET" class="row g-3 align-items-end">
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold">Data</label>
+                        <input type="date" name="data" class="form-control" value="">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold">Usuari</label>
+                        <input type="text" name="usuari" class="form-control" placeholder="Nom d'usuari" value="">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label small fw-bold">Pàgina</label>
+                        <input type="text" name="pagina" class="form-control" placeholder="/index.php" value="">
+                    </div>
+                    <div class="col-md-3 d-flex gap-2">
+                        <button type="submit" class="btn btn-primary w-100 fw-bold">Filtrar</button>
+                        <button type="button" onclick="location.href='estadistiques.php'" class="btn btn-outline-secondary w-100">Netejar</button>
+                    </div>
+                </form>
+            </div>
+</div>
+<?php if (!empty($match_base)): ?>
+    <div class="container-mitja">
+    <?php
+        $pipeline_resum = [
+            ['$match' => $match_base],
+            ['$group' => ['_id' => 0, 'total' => ['$sum' => 1]]],
+            ['$project' => ['_id' => 0, 'total' => 1]]
+        ];
+
+        $res_resum = $collection->aggregate($pipeline_resum);
+        $total_filtrat = 0;
+        foreach ($res_resum as $doc) {
+            $total_filtrat = $doc['total'];
+        }
+        ?>
+
+        <h2>Total d'accessos amb els filtres aplicats</h2>
+        <div class="">
+            <strong><i class="bi bi-funnel-fill"></i> Resultats filtrats per:</strong>
+            <?= $filtre_data   !== '' ? " Data: <b>$filtre_data</b>"     : "" ?>
+            <?= $filtre_usuari !== '' ? " Usuari: <b>$filtre_usuari</b>" : "" ?>
+            <?= $filtre_pagina !== '' ? " Pàgina: <b>$filtre_pagina</b>" : "" ?>
+        </div>
+        <table class="table">
+            <thead>
+                <tr><th>Total Accessos</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><?= $total_filtrat ?></td></tr>
+            </tbody>
+        </table>
+    </div>
+<?php endif; ?>
+ <?php
+ echo "<div class='container'>\n";
+ echo "<h2> Accesos per dia</h2>\n";
+
+ $pipeline_dias = [
     [
         '$match' => [
             'data_inici_sessio' => [ '$regex' => ' ' ]

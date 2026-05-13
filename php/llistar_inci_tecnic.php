@@ -37,7 +37,7 @@ while ($fila = $resultat->fetch_assoc()) {
         <tbody>
         <h3>Prioritat Alta</h3>
 
-        <table class="table"    >
+        <table class="table">
             <thead>
                     <tr>
                         <th>ID Incidència</th>
@@ -45,13 +45,16 @@ while ($fila = $resultat->fetch_assoc()) {
                         <th>Departament </th>
                         <th> </th>
                     </tr>
-                    </thead>
+            </thead>
         <?php foreach ($dades as $fila): ?>
         <?php if ($fila['prioritat'] == 'Alta'): ?>
             <tr class="table-danger">
-                <td><?= $fila["idIncidencia"] ?></td>
-                <td> <?= $fila["descripcio"] ?> </td>
-                <td><?= $fila["nom"] ?> </td>
+                <td rowspan="2"><?= $fila["idIncidencia"] ?></td>
+                <td rowspan="2"> <?= $fila["descripcio"] ?> </td>
+                <td rowspan="2"><?= $fila["nom"] ?> </td>
+                <td> <a href="llistar_inci_id.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>"> LListar Actuacions</a></td>
+            </tr>
+            <tr class="table-danger">
                 <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>&idTecnic=<?php echo $idTecnic?>">Crear Actuacio</a></td>
             </tr>
         <?php endif; ?>
@@ -71,9 +74,12 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php foreach ($dades as $fila): ?>
         <?php if ($fila['prioritat'] == 'Mitja'): ?>
             <tr class="table-warning">
-                <td><?= $fila["idIncidencia"] ?></td>
-                <td> <?= $fila["descripcio"] ?> </td>
-                <td><?= $fila["nom"] ?> </td>
+                <td rowspan="2"><?= $fila["idIncidencia"] ?></td>
+                <td rowspan="2"> <?= $fila["descripcio"] ?> </td>
+                <td rowspan="2"><?= $fila["nom"] ?> </td>
+                <td> <a href="llistar_inci_id.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>"> LListar Actuacions</a></td>
+            </tr>
+            <tr class="table-warning">
                 <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>&idTecnic=<?php echo $idTecnic?>">Crear Actuacio</a></td>
             </tr>
         <?php endif; ?>
@@ -93,9 +99,12 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php foreach ($dades as $fila): ?>
         <?php if ($fila['prioritat'] == 'Baixa'): ?>
             <tr class="table-info">
-                <td><?= $fila["idIncidencia"] ?></td>
-                <td> <?= $fila["descripcio"] ?> </td>
-                <td><?= $fila["nom"] ?> </td>
+                <td rowspan="2"><?= $fila["idIncidencia"] ?></td>
+                <td rowspan="2"> <?= $fila["descripcio"] ?> </td>
+                <td rowspan="2"><?= $fila["nom"] ?> </td>
+                <td> <a href="llistar_inci_id.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>"> LListar Actuacions</a></td>
+            </tr>
+            <tr class="table-info">
                 <td> <a href="crear_act.php?idIncidencia=<?php echo $fila["idIncidencia"]; ?>&idTecnic=<?php echo $idTecnic?>">Crear Actuacio</a></td>
             </tr>
         <?php endif; ?>
