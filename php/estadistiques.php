@@ -9,7 +9,7 @@
     $match_base = [];
 
     if ($filtre_data !== '') {
-        $match_base['data_inici_sessio'] = ['$regex' => ' ' . $filtre_data];
+        $match_base['data_inici_sessio'] = ['$regex' => '^' . $filtre_data];
     }
     if ($filtre_usuari !== '') {
         $match_base['usuari_id'] = ['$regex' => $filtre_usuari, '$options' => 'i'];
