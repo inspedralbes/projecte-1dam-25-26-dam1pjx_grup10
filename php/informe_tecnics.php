@@ -20,16 +20,18 @@ $sentencia_count = $mysqli->prepare("
     FROM INCIDENCIA inci
     INNER JOIN TECNIC tec ON inci.tecnic = tec.idTecnic
     INNER JOIN ACTUACIO act ON act.incidencia = inci.idIncidencia
+    where inci.data_fi is null
 ");
 $sentencia_count->execute();
 $contador = $sentencia_count->get_result()->fetch_object()->num_pages;
 
 $incidencies = ceil($contador / $inci_per_page);
 
-$sentencia = $mysqli->prepare("SELECT tec.nom, inci.idIncidencia, inci.prioritat, inci.data_inici, inci.data_fi ,sum(act.temps) as temps 
+$sentencia = $mysqli->prepare("SELECT tec.nom, inci.idIncidencia, inci.prioritat, inci.data_inici ,sum(act.temps) as temps 
 FROM TECNIC tec
 join INCIDENCIA inci on inci.tecnic = tec.idTecnic
 join ACTUACIO act on act.incidencia = inci.idIncidencia
+where inci.data_fi is null
 group by tec.nom, inci.idIncidencia, inci.prioritat, inci.data_inici
 order by tec.nom, inci.prioritat 
 LIMIT ? OFFSET ?");
@@ -53,7 +55,6 @@ while ($fila = $resultat->fetch_assoc()) {
         <th>ID Incidencia</th>
         <th>Prioritat</th>
         <th>Data inici</th>
-        <th>Data fi</th>
         <th>Temps</th>
     </tr>
     </thead>
@@ -64,7 +65,6 @@ while ($fila = $resultat->fetch_assoc()) {
             <td><?= $fila["idIncidencia"] ?></td>
             <td><?= $fila["prioritat"] ?></td>
             <td><?= $fila["data_inici"] ?></td>
-            <td><?= $fila["data_fi"] ?></td>
             <td><?= $fila["temps"] ?>min</td>
         </tr>
     <?php endforeach; ?>
