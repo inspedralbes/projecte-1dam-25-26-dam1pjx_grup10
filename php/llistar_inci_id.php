@@ -29,13 +29,13 @@ $dades2 = $resultat2->fetch_assoc();
     <?php if (empty($dades2)):;?>
     <h4>No hi ha cap Incidència amb aquesta ID, si no recordes la teva ID prova a buscar per Departament.</h4>
     <?php else: ?>
-    <h4>Estat Incidencia</h4>
+    <h4>Estat Incidència</h4>
     <?php if (empty($dades) || is_null($dades[0]["data_fi"])): ?>
         <p><b>Pendent</b></p>
     <?php else: ?>
         <p><b>Resolta</b> el dia: <?= $dades[0]["data_fi"] ?></p>
     <?php endif; ?>
-    <h4>Decripció Incidencia</h4>
+    <h4>Decripció Incidència</h4>
     <?php echo $dades2["inci_desc"] ?>
 <table class="table">
     <thead>

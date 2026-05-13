@@ -41,7 +41,7 @@ while ($fila = $resultat->fetch_assoc()) {
 }
 ?>
 <div class="container-gran text-center">
-<h2>Incidencies no Resoltes</h2>
+<h2>Incidències no Resoltes</h2>
 
 <table class="table">
     <thead>

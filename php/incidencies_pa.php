@@ -37,7 +37,7 @@ while ($fila = $resultat->fetch_assoc()) {
 }
 ?>
 <div class="container-mitja text-center">
-<h2>Incidencies Pendents d'Assignar</h2>
+<h2>Incidències Pendents d'Assignar</h2>
 
 <table class="table">
     <thead>

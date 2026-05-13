@@ -44,7 +44,7 @@ while ($fila = $resultat->fetch_assoc()) {
 }
 ?>
 <div class="container-gran text-center">
-<h2>Informe Tecnics</h2>
+<h2>Informe Tècnics</h2>
 
 <table class="table">
     <thead>
