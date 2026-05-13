@@ -3,10 +3,32 @@
 <?php include_once "connexio_mongo.php"?>
 <?php
 $mysqli = require_once 'connexio.php';
-$departament = intval($_GET["departament"]);
 
-$sentencia = $mysqli->prepare("SELECT * FROM INCIDENCIA WHERE departament = ?");
-$sentencia->bind_param("i", $departament);
+$inci_per_page = 10;
+
+$pagina = 1;
+if (isset($_GET['pagina'])) {
+    $pagina = $_GET['pagina'];
+}
+
+$limit = $inci_per_page;
+
+$offset = ($pagina - 1) * $inci_per_page;
+
+$departament = intval($_GET["departament"]) ? intval($_GET["departament"]) : 0;
+
+$sentencia_count = $mysqli->prepare("SELECT count(*) AS num_pages FROM INCIDENCIA WHERE departament = ?");
+$sentencia_count->bind_param("i", $departament);
+$sentencia_count->execute();
+$contador = $sentencia_count->get_result()->fetch_object()->num_pages;
+
+$incidencies = ceil($contador / $inci_per_page);
+
+
+
+
+$sentencia = $mysqli->prepare("SELECT * FROM INCIDENCIA WHERE departament = ? LIMIT ? OFFSET ?");
+$sentencia->bind_param("iii", $departament, $limit, $offset);
 $sentencia->execute();
 
 $resultat = $sentencia->get_result();
@@ -47,6 +69,14 @@ while ($fila = $resultat->fetch_assoc()) {
         <?php endforeach; ?>
         </tbody>
     </table>
+    <div class="d-flex justify-content-center mt-3">
+        <?php for ($i = 1; $i <= $incidencies; $i++): ?>
+            <a href="?pagina=<?= $i ?>&departament=<?= $departament ?>"
+               class="btn <?= $i == $pagina ? 'btn-primary' : 'btn-outline-primary' ?> mx-1">
+                <?= $i ?>
+            </a>
+        <?php endfor; ?>
+    </div>
 </div>
 <?php $link = 'usuaris.php'; ?>
 <?php include_once "footer.php"; ?>
