@@ -77,8 +77,8 @@ while ($fila3 = $resultat3->fetch_assoc()) {
 <div class="container text-center">
 <form action="edit_succes.php" method="GET" name="editar_incidencia" onsubmit="return validarCampsEditInc()">
             <div class="form-group">
-                <label for="prioritat">Prioritat</label>
-                <select name="prioritat" id="prioritat">
+                <label for="prioritat"><b>Prioritat</b></label>
+                <select class="form-select text-center" name="prioritat" id="prioritat">
                     <option value="" disabled selected>-- Selecciona la prioritat --</option>
                     <option value="Alta">Alta</option>
                     <option value="Mitja">Mitja</option>
@@ -88,8 +88,8 @@ while ($fila3 = $resultat3->fetch_assoc()) {
             </div>
         <br>
         <div class="form-group">
-                        <label for="tipologia">Tipologia</label>
-                        <select name="tipologia" id="tipologia">
+                        <label for="tipologia"><b>Tipologia</b></label>
+                        <select class="form-select text-center" name="tipologia" id="tipologia">
                             <option value="" disabled selected> --Selecciona la tipologia -- </option>
                                                 <?php foreach ($dades3 as $fila3): ?>
                                                 <option value="<?= $fila3["idTipus"] ?>"> <?= $fila3["nom"]?> </option>
@@ -99,8 +99,8 @@ while ($fila3 = $resultat3->fetch_assoc()) {
                     </div>
                 <br>
             <div class="form-group">
-                 <label for="idTecnic">Tècnic</label>
-                    <select name="idTecnic" id="idTecnic">
+                 <label for="idTecnic"><b>Tècnic</b></label>
+                    <select class="form-select text-center" name="idTecnic" id="idTecnic">
                     <option value="" disabled selected> --Selecciona el tècnic -- </option>
                     <?php foreach ($dades2 as $fila2): ?>
                     <option value="<?= $fila2["idTecnic"] ?>"> <?= $fila2["cognom"]?> </option>
