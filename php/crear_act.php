@@ -6,9 +6,9 @@
     <div class="text-center">
         <h1>Registar Actuació</h1>
         <form action="registrar_act.php" method="POST" name="crear_Act" onsubmit="return validarCrearAct()">
-            <div class="form-group">
-                <label for="temps_trigat">Temps Trigat</label>
-                <select class="form-select" name="temps_trigat" id="temps_trigat">
+
+                <label for="temps_trigat"><b>Temps Trigat</b></label>
+                <select class="form-select text-center" name="temps_trigat" id="temps_trigat">
                     <option value="" selected disabled>-- Selecciona Temps Trigat --</option>
                     <option value="5">5min</option>
                     <option value="10">10min</option>
@@ -22,23 +22,22 @@
                     <option value="105">105min/1:45h</option>
                     <option value="120">120min/2h</option>
                 </select>
-            <div class="form-group">
-                <table>
-                    <td>
-                        <label for="descripcio">Descripció</label>
-                        <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" cols="30" rows="10" ></textarea>
-                    </td>
-                    <td>
-                        <label for="visible">Visible per l'usuari</label>
-                        <input type="checkbox" name="visible" id="visible" value="1">
-                    </td>
-                </table>
-            </div>
 
-            <div class="form-group">
+
+
+                <table class="text-center">
+                    <tr>
+                        <label for="descripcio"><b>Descripció</b></label>
+                        <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" cols="30" rows="10" ></textarea>
+                    </tr>
+                </table>
+
+                <label for="visible">Visible per l'usuari</label>
+                <input type="checkbox" name="visible" id="visible" value="1">
+                <br>
                 <label for="finalizat">Finalitzat?</label>
                 <input type="checkbox" name="finalizat" id="yes" value="1">
-            </div>
+
                 <input type="hidden" name="idIncidencia" value="<?= $idIncidencia ?>">
 
                 <div class="form-group"><button class="btn btn-outline-primary">Guardar</button></div>
