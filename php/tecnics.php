@@ -25,7 +25,7 @@ while ($fila = $resultat->fetch_assoc()) {
             <div class="form-group">
                 <h3>Quin tècnic ets?</h3>
                 <label for="idTecnic"></label>
-                <select name="idTecnic" id="idTecnic">
+                <select class="form-select" name="idTecnic" id="idTecnic">
                     <option value="" disabled selected> --Selecciona el teu nom -- </option>
                     <?php foreach ($dades as $fila): ?>
                     <option value="<?= $fila["idTecnic"] ?>"> <?= $fila["cognom"]?> </option>

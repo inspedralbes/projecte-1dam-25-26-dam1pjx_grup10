@@ -8,7 +8,7 @@
         <form action="registrar_act.php" method="POST" name="crear_Act" onsubmit="return validarCrearAct()">
             <div class="form-group">
                 <label for="temps_trigat">Temps Trigat</label>
-                <select name="temps_trigat" id="temps_trigat">
+                <select class="form-select" name="temps_trigat" id="temps_trigat">
                     <option value="" selected disabled>-- Selecciona Temps Trigat --</option>
                     <option value="5">5min</option>
                     <option value="10">10min</option>

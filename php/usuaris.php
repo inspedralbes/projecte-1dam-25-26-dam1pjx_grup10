@@ -28,8 +28,8 @@ while ($fila = $resultat->fetch_assoc()) {
         <h1>Registrar Incidència</h1>
         <form name="formRegInci" action="registrar_inci.php" method="POST" onsubmit="return validarRegInc()" >
             <div class="form-group">
-                <label for="departament">Departament</label>
-                <select name="departament" id="departament" name="departament">
+                <label for="departament"><b>Departament</b></label>
+                <select class="form-select" name="departament" id="departament" name="departament">
                     <option value="" disabled selected> --Selecciona el departament -- </option>
                     <?php foreach ($dades as $fila): ?>
                     <option value="<?= $fila["idDepartament"] ?>"> <?= $fila["nom"]?> </option>
@@ -37,7 +37,7 @@ while ($fila = $resultat->fetch_assoc()) {
                 </select>
             </div>
             <div class="form-group">
-                <label for="descripcio">Descripció</label>
+                <label for="descripcio"><b>Descripció</b></label>
                 <textarea placeholder="Descripció" class="form-control" name="descripcio" id="descripcio" rows="4" cols="30"  ></textarea>
             </div>
             <div class="form-group"><button class="btn btn-outline-primary">Registrar</button></div>
@@ -51,7 +51,7 @@ while ($fila = $resultat->fetch_assoc()) {
 
         <form action="llistar_inci_id.php" method="GET" name="consultar_Inc_id" onsubmit="return validarNumId()">
             <div class="form-group">
-                <label for="idIncidencia">Número Incidència</label> <br>
+                <label for="idIncidencia"><b>Número Incidència</b></label> <br>
                 <textarea name="idIncidencia" placeholder="Indica el número de la teva Incidència" rows="1" cols="30"></textarea>
             </div>
             <div class="form-group"><button class="btn btn-outline-primary">Trobar</button></div>
@@ -61,8 +61,8 @@ while ($fila = $resultat->fetch_assoc()) {
 
     <form action="llistar_inci_dept.php" method="GET" name="consultar_Inc_dept" onsubmit="return validarDept()">
                 <div class="form-group">
-                    <label for="departament">Departament</label>
-                    <select name="departament" id="departament">
+                    <label for="departament"><b>Departament</b></label>
+                    <select class="form-select" name="departament" id="departament">
                     <option value="" disabled selected> --Selecciona el departament -- </option>
                     <?php foreach ($dades as $fila): ?>
                     <option value="<?= $fila["idDepartament"] ?>"> <?= $fila["nom"]?> </option>
