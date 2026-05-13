@@ -59,7 +59,7 @@ while ($fila = $resultat->fetch_assoc()) {
     <br>
                 <p>O bé, pots consultar per departaments: </p>
 
-    <form action="llistar_inci_dept.php" method="GET">
+    <form action="llistar_inci_dept.php" method="GET" name="consultar_Inc_dept" onsubmit="return validarDept()">
                 <div class="form-group">
                     <label for="departament">Departament</label>
                     <select name="departament" id="departament">

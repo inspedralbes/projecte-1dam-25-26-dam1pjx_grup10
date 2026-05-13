@@ -37,6 +37,15 @@ function validarNumId(){
     }
 }
 
+function validarDept(){
+    let x = document.forms["consultar_Inc_dept"]["departament"].value;
+
+    if (x===""){
+        alert("Si us plau, introdueix un departament per consultar");
+        return false;
+    }
+}
+
 function validarNumTec(){
     let x = document.forms["incidencies_tecnics"]["idTecnic"].value;
 
