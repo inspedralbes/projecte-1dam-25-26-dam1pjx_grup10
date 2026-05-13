@@ -35,7 +35,7 @@ while ($fila = $resultat->fetch_assoc()) {
                 <td><?= $fila["descripcio"] ?></td>
                 <td><?= $fila["data_inici"] ?></td>
                 <td>
-                    <?php if (empty($fila["data_fi"]) || is_null($dades[0]["data_fi"])): ?>
+                    <?php if (is_null($fila["data_fi"])): ?>
                         <p>Pendent</p>
                     <?php else: ?>
                         <p>Resolta</p>
