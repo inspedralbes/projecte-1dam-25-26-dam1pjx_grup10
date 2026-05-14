@@ -65,3 +65,7 @@ function validarCampsEditInc(){
         return false;
     }
 }
+
+function MyFunction(){
+    alert("No clicable");
+}

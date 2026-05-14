@@ -107,7 +107,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container-gran centrat_mig">
 
     <h1>Inici de sessió</h1>
-    <p> <b>Registre d'incidències</b></p>
+    <p> <b><button style="background:none;
+                              border:none;
+                              margin:0;
+                              padding:0;" id="boto" onclick="MyFunction()">Registre d'incidències</button></b></p>
 
     <?php
 
@@ -134,5 +137,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </div>
 </body>
-
+<script src="./js/myScript.js"></script>
 </html>
