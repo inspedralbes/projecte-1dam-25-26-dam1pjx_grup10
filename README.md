@@ -1,16 +1,22 @@
-# transversals
-Esquema mínim de carpetes pels projectes transversals
+# GRUP 10
+Izan Gómez, Josep Monegal
 
-És obligatori seguir aquesta estructura tot i que la podeu ampliar.
+# Objectiu del projecte
+Aquest projecte consisteix en desenvolupar una aplicació de gestió d'incidències informàtiques, on els usuaris puguin informar sobre alguna incidencia informatica del seu departament, el responsable catalogar-les i assignar les incidencies als tècnics per prioritat i tipus i els tècnics registrar actuacions sobre les incidencies registrades.
 
-## Atenció
-Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre projecte (utilitzant markdown)
+# Estat del projecte
+L'aplicació ja inclou tots els components de funcionament.
+Es poden crear i consultar incidències com a usuari.
+Es poden modificar i assignar incidències com a responsable.
+Es poden registrar i consultar actuacions com a tècnic.
+El responsable també pot consultar tot un seguit d'estadístiques sobre rendiment i accessos a l'aplicatiu.
 
-# Aquest fitxer ha de contenir com a mínim:
- * Nom dels integrants
- * Nom del projecte
- * Petita descripció
- * Adreça del gestor de tasques (taiga, jira, trello...)
- * Adreça del prototip gràfic del projecte (Penpot, figma, moqups...)
- * URL de producció (quan la tingueu)
- * Estat: (explicació d'en quin punt està)
+
+## Gestor de tasques
+https://tree.taiga.io/project/a25josmonces-projectegrup10
+
+## Prototip gràfic
+https://design.penpot.app/#/view?file-id=ceed1600-61c0-8087-8007-e708e18dd664&page-id=ceed1600-61c0-8087-8007-e708e18dd665&section=interactions&index=0&share-id=29a60c49-971d-80dc-8007-e99c1f55a3db
+
+## URL producció
+http://g10.dam.inspedralbes.cat

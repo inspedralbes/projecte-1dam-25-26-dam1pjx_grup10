@@ -1,0 +1,95 @@
+textarea {
+    resize: none;
+}
+
+button{
+    margin-top: 10px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #CEC2EB;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    padding: 0;
+}
+main {
+    align-self: start;
+}
+
+.superposat{
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.confirmacio{
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.container-gran {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container-gran header {
+    padding-top: 8px;
+    padding-bottom: 4px;
+    margin-bottom: 0 ;
+}
+
+.container-gran header a {
+    margin-bottom: -50px ;
+}
+
+.container-gran header .border-top {
+    padding-top: 4px ;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container-mitja {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+hr {
+    max-width: 600px;
+    margin: 30px auto;
+    border: none;
+    border-top: 2px solid black;
+}
+
+.form-group a{
+    margin: 5px;
+}
+
+.centrat_mig{
+    margin-top: 10%;
+}
